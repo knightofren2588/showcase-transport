@@ -1,46 +1,56 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  async function handleSubmit(e) {
     e.preventDefault();
-    setSubmitted(true);
-  };
+    setError("");
 
-  if (submitted) {
+    const form = e.target;
+    const data = new FormData(form);
+
+    // VERY IMPORTANT: Netlify needs this field
+    data.set("form-name", "quote");
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        body: data,
+      });
+      setSent(true);
+      form.reset();
+    } catch (err) {
+      setError("Something went wrong. Please try again.");
+    }
+  }
+
+  if (sent) {
     return (
-      <div className="max-w-3xl mx-auto px-4 py-12 space-y-8">
-        <div className="card shadow-soft rounded-lg p-8 text-center" role="status" tabIndex="0">
-          <div className="text-6xl mb-4">✅</div>
-          <h2 className="text-2xl font-bold text-st-green mb-2">Thank You!</h2>
-          <p className="text-st-navy/70 mb-4">
+      <section className="max-w-3xl mx-auto px-4 py-16">
+        <div className="bg-white shadow-soft rounded-2xl p-10 text-center space-y-4">
+          <div className="text-5xl mb-2">✅</div>
+          <h1 className="text-2xl font-heading text-st-navy">Thank You!</h1>
+          <p className="text-st-text/80">
             We've received your quote request and will respond within 24 hours.
           </p>
           <button
-            onClick={() => setSubmitted(false)}
-            className="brand-cta"
+            onClick={() => setSent(false)}
+            className="brand-cta mt-4 inline-flex"
           >
             Submit Another Request
           </button>
         </div>
-      </div>
+      </section>
     );
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-12 space-y-8">
-      {/* Netlify form fallback: lets Netlify detect the form even though React renders it */}
-      <form name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
-        <input type="hidden" name="form-name" value="quote" />
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <textarea name="message"></textarea>
-      </form>
-
-      <div className="text-center space-y-2">
-        <h1 className="text-4xl font-bold text-st-navy">Request a Quote</h1>
-        <p className="text-lg text-st-navy/70">
+    <section className="max-w-3xl mx-auto px-4 py-12 space-y-8">
+      <div>
+        <h1 className="text-3xl font-heading text-st-navy">Request a Quote</h1>
+        <p className="text-st-text/80">
           Fill out the details below and we'll respond with availability and pricing.
         </p>
       </div>
@@ -51,97 +61,100 @@ export default function Contact() {
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
-        className="card shadow-soft rounded-lg p-8 space-y-6"
+        className="bg-white shadow-soft rounded-2xl p-8 space-y-6"
       >
+        {/* Netlify needs this */}
         <input type="hidden" name="form-name" value="quote" />
-        <input name="bot-field" className="hidden" />
+
+        {/* Honeypot */}
+        <p className="hidden">
+          <label>
+            Don't fill this out: <input name="bot-field" />
+          </label>
+        </p>
 
         <div>
-          <label htmlFor="name" className="block text-st-navy font-semibold mb-1">
-            Name <span className="text-red-500">*</span>
+          <label className="block font-semibold text-st-navy" htmlFor="name">
+            Name *
           </label>
           <input
-            type="text"
             id="name"
             name="name"
             required
-            className="w-full border border-st-navy/15 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-st-green"
+            className="mt-1 w-full border border-st-navy/15 rounded-lg px-4 py-2"
           />
         </div>
 
         <div>
-          <label htmlFor="company" className="block text-st-navy font-semibold mb-1">
+          <label className="block font-semibold text-st-navy" htmlFor="company">
             Company
           </label>
           <input
-            type="text"
             id="company"
             name="company"
-            className="w-full border border-st-navy/15 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-st-green"
+            className="mt-1 w-full border border-st-navy/15 rounded-lg px-4 py-2"
           />
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-st-navy font-semibold mb-1">
-            Email <span className="text-red-500">*</span>
+          <label className="block font-semibold text-st-navy" htmlFor="email">
+            Email *
           </label>
           <input
-            type="email"
             id="email"
             name="email"
+            type="email"
             required
-            className="w-full border border-st-navy/15 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-st-green"
+            className="mt-1 w-full border border-st-navy/15 rounded-lg px-4 py-2"
           />
         </div>
 
         <div>
-          <label htmlFor="phone" className="block text-st-navy font-semibold mb-1">
+          <label className="block font-semibold text-st-navy" htmlFor="phone">
             Phone
           </label>
           <input
-            type="tel"
             id="phone"
             name="phone"
-            className="w-full border border-st-navy/15 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-st-green"
+            type="tel"
+            className="mt-1 w-full border border-st-navy/15 rounded-lg px-4 py-2"
           />
         </div>
 
         <div>
-          <label htmlFor="origin" className="block text-st-navy font-semibold mb-1">
-            Origin <span className="text-red-500">*</span>
+          <label className="block font-semibold text-st-navy" htmlFor="origin">
+            Origin *
           </label>
           <input
-            type="text"
             id="origin"
             name="origin"
             required
             placeholder="City, State or ZIP"
-            className="w-full border border-st-navy/15 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-st-green"
+            className="mt-1 w-full border border-st-navy/15 rounded-lg px-4 py-2"
           />
         </div>
 
         <div>
-          <label htmlFor="destination" className="block text-st-navy font-semibold mb-1">
-            Destination <span className="text-red-500">*</span>
+          <label className="block font-semibold text-st-navy" htmlFor="destination">
+            Destination *
           </label>
           <input
-            type="text"
             id="destination"
             name="destination"
             required
             placeholder="City, State or ZIP"
-            className="w-full border border-st-navy/15 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-st-green"
+            className="mt-1 w-full border border-st-navy/15 rounded-lg px-4 py-2"
           />
         </div>
 
         <div>
-          <label htmlFor="loadType" className="block text-st-navy font-semibold mb-1">
+          <label className="block font-semibold text-st-navy" htmlFor="loadType">
             Load Type
           </label>
           <select
             id="loadType"
             name="loadType"
-            className="w-full border border-st-navy/15 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-st-green"
+            className="mt-1 w-full border border-st-navy/15 rounded-lg px-4 py-2"
           >
             <option value="">Select a load type</option>
             <option value="Palletized Freight">Palletized Freight</option>
@@ -152,7 +165,7 @@ export default function Contact() {
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-st-navy font-semibold mb-1">
+          <label className="block font-semibold text-st-navy" htmlFor="message">
             Message
           </label>
           <textarea
@@ -160,11 +173,13 @@ export default function Contact() {
             name="message"
             rows="4"
             placeholder="Tell us about your shipping needs..."
-            className="w-full border border-st-navy/15 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-st-green"
+            className="mt-1 w-full border border-st-navy/15 rounded-lg px-4 py-2"
           ></textarea>
         </div>
 
-        <button type="submit" className="brand-btn mt-4">
+        {error && <p className="text-red-600">{error}</p>}
+
+        <button type="submit" className="brand-btn">
           Send Request
         </button>
       </form>
@@ -178,6 +193,6 @@ export default function Contact() {
           mike@starktechstudios.com
         </a>
       </div>
-    </div>
+    </section>
   );
 }
