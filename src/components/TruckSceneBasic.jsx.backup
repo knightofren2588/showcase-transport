@@ -1,0 +1,718 @@
+// src/components/TruckSceneBasic.jsx
+
+import usePrefersReducedMotion from '../hooks/usePrefersReducedMotion';
+
+export default function TruckSceneBasic({ className = '', animate = false }) {
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const shouldAnimate = animate && !prefersReducedMotion;
+
+  return (
+    <figure className={`st-baseline ${className}`}>
+      <style>{`
+        .st-baseline svg {
+          width: 100%;
+          height: auto;
+        }
+        
+        /* Animation Classes */
+        .st-baseline-animated .st-truck-group {
+          animation: truck-movement 30s ease-in-out infinite;
+        }
+        
+        .st-baseline-animated .st-trailer-group {
+          animation: trailer-movement 30s ease-in-out infinite;
+        }
+        
+        .st-baseline-animated .st-landing-gear {
+          animation: landing-gear-movement 30s ease-in-out infinite;
+        }
+        
+        .st-baseline-animated .st-wheel {
+          animation: wheel-rotation 30s linear infinite;
+        }
+        
+        .st-baseline-animated .st-reverse-light {
+          animation: reverse-light-flash 30s ease-in-out infinite;
+        }
+        
+        .st-baseline-animated .st-headlight {
+          animation: headlight-flash 30s ease-in-out infinite;
+        }
+        
+        .st-baseline-animated .st-brake-light {
+          animation: brake-light-flash 30s ease-in-out infinite;
+        }
+        
+        .st-baseline-animated .st-connection {
+          animation: connection-visibility 30s steps(1) infinite;
+        }
+        
+        .st-baseline-animated .st-dock-door {
+          animation: dock-door-movement 30s ease-in-out infinite;
+        }
+        
+        .st-baseline-animated .st-dock-light {
+          animation: dock-light-color 30s steps(1) infinite;
+        }
+        
+        .st-baseline-animated .st-dock-plate {
+          animation: dock-plate-extension 30s ease-in-out infinite;
+        }
+        
+        .st-baseline-animated .st-dock-bumper {
+          animation: dock-bumper-compress 30s ease-in-out infinite;
+        }
+        
+        /* NEW: Exhaust smoke group that follows truck */
+        .st-baseline-animated .st-exhaust-group {
+          animation: exhaust-follow-truck 30s ease-in-out infinite;
+        }
+        
+        /* NEW: Individual exhaust puff animations - opacity only */
+        .st-baseline-animated .st-exhaust-puff-1 {
+          animation: exhaust-fade-1 2s ease-out infinite;
+        }
+        
+        .st-baseline-animated .st-exhaust-puff-2 {
+          animation: exhaust-fade-2 2s ease-out infinite;
+        }
+        
+        .st-baseline-animated .st-exhaust-puff-3 {
+          animation: exhaust-fade-3 2s ease-out infinite;
+        }
+        
+        .st-baseline-animated .st-exhaust-puff-4 {
+          animation: exhaust-fade-4 2s ease-out infinite;
+        }
+        
+        /* NEW: Reefer steam group that follows trailer */
+        .st-baseline-animated .st-reefer-group {
+          animation: reefer-follow-trailer 30s ease-in-out infinite;
+        }
+        
+        /* NEW: Individual reefer steam animations - opacity only */
+        .st-baseline-animated .st-reefer-steam-1 {
+          animation: reefer-fade-1 3s ease-out infinite;
+        }
+        
+        .st-baseline-animated .st-reefer-steam-2 {
+          animation: reefer-fade-2 3s ease-out infinite;
+        }
+        
+        .st-baseline-animated .st-reefer-steam-3 {
+          animation: reefer-fade-3 3s ease-out infinite;
+        }
+        
+        /* NEW: Time of Day Animations */
+        .st-baseline-animated .st-sky {
+          animation: sky-transition 30s ease-in-out infinite;
+        }
+        
+        .st-baseline-animated .st-ground {
+          animation: ground-transition 30s ease-in-out infinite;
+        }
+        
+        .st-baseline-animated .st-sun {
+          animation: sun-movement 30s ease-in-out infinite;
+        }
+        
+        .st-baseline-animated .st-headlight-glow {
+          animation: headlight-glow-increase 30s ease-in-out infinite;
+        }
+        
+        .st-baseline-animated .st-dock-light-glow {
+          animation: dock-light-glow 30s ease-in-out infinite;
+        }
+        
+        /* Truck Movement Animation */
+        @keyframes truck-movement {
+          0% { transform: translateX(0); }
+          6.67% { transform: translateX(0); }
+          26.67% { transform: translateX(250px); }
+          30% { transform: translateX(250px); }
+          50% { transform: translateX(0); }
+          53.33% { transform: translateX(0); }
+          60% { transform: translateX(0); }
+          66.67% { transform: translateX(250px); }
+          70% { transform: translateX(250px); }
+          90% { transform: translateX(0); }
+          93.33% { transform: translateX(0); }
+          100% { transform: translateX(0); }
+        }
+        
+        /* Trailer Movement Animation */
+        @keyframes trailer-movement {
+          0% { transform: translateX(0); }
+          6.67% { transform: translateX(0); }
+          26.67% { transform: translateX(250px); }
+          30% { transform: translateX(250px); }
+          50% { transform: translateX(0); }
+          53.33% { transform: translateX(0); }
+          60% { transform: translateX(0); }
+          93.33% { transform: translateX(0); }
+          100% { transform: translateX(0); }
+        }
+        
+        /* NEW: Exhaust smoke follows truck position */
+        @keyframes exhaust-follow-truck {
+          0% { transform: translateX(0); }
+          6.67% { transform: translateX(0); }
+          26.67% { transform: translateX(250px); }
+          30% { transform: translateX(250px); }
+          50% { transform: translateX(0); }
+          53.33% { transform: translateX(0); }
+          60% { transform: translateX(0); }
+          66.67% { transform: translateX(250px); }
+          70% { transform: translateX(250px); }
+          90% { transform: translateX(0); }
+          93.33% { transform: translateX(0); }
+          100% { transform: translateX(0); }
+        }
+        
+        /* NEW: Reefer steam follows trailer position */
+        @keyframes reefer-follow-trailer {
+          0% { transform: translateX(0); }
+          6.67% { transform: translateX(0); }
+          26.67% { transform: translateX(250px); }
+          30% { transform: translateX(250px); }
+          50% { transform: translateX(0); }
+          53.33% { transform: translateX(0); }
+          60% { transform: translateX(0); }
+          93.33% { transform: translateX(0); }
+          100% { transform: translateX(0); }
+        }
+        
+        /* Landing Gear Animation */
+        @keyframes landing-gear-movement {
+          0% { opacity: 0; transform: translateY(0); }
+          3.33% { opacity: 0; transform: translateY(0); }
+          53.33% { opacity: 0; transform: translateY(0); }
+          56.67% { opacity: 1; transform: translateY(0); }
+          90% { opacity: 1; transform: translateY(0); }
+          93.33% { opacity: 0; transform: translateY(0); }
+          100% { opacity: 0; transform: translateY(0); }
+        }
+        
+        /* Wheel Rotation Animation */
+        @keyframes wheel-rotation {
+          0%, 6.67% { transform: rotate(0deg); }
+          26.67% { transform: rotate(720deg); }
+          30% { transform: rotate(720deg); }
+          50% { transform: rotate(0deg); }
+          53.33% { transform: rotate(0deg); }
+          60% { transform: rotate(0deg); }
+          66.67% { transform: rotate(240deg); }
+          70% { transform: rotate(240deg); }
+          90% { transform: rotate(0deg); }
+          100% { transform: rotate(0deg); }
+        }
+        
+        /* Reverse Light Animation */
+        @keyframes reverse-light-flash {
+          0%, 30% { opacity: 0; }
+          30%, 53.33% { opacity: 1; }
+          53.33%, 70% { opacity: 0; }
+          70%, 93.33% { opacity: 1; }
+          93.33%, 100% { opacity: 0; }
+        }
+        
+        /* Headlight Animation - Brighter during dusk */
+        @keyframes headlight-flash {
+          0%, 6.67% { opacity: 0.3; }
+          6.67%, 30% { opacity: 1; }
+          30%, 60% { opacity: 0.3; }
+          60%, 70% { opacity: 1; }
+          70%, 75% { opacity: 0.5; }      /* Dusk - slightly brighter even when dim */
+          75%, 100% { opacity: 0.5; }     /* Dusk continues */
+        }
+        
+        /* Brake Light Animation */
+        @keyframes brake-light-flash {
+          0%, 6.67% { opacity: 0.3; }
+          26.67%, 30% { opacity: 1; }
+          30%, 50% { opacity: 0.3; }
+          50%, 53.33% { opacity: 1; }
+          53.33%, 66.67% { opacity: 0.3; }
+          66.67%, 70% { opacity: 1; }
+          70%, 90% { opacity: 0.3; }
+          90%, 93.33% { opacity: 1; }
+          93.33%, 100% { opacity: 0.3; }
+        }
+        
+        /* Connection Visibility */
+        @keyframes connection-visibility {
+          0%, 60% { opacity: 1; }
+          60%, 93.33% { opacity: 0; }
+          93.33%, 100% { opacity: 1; }
+        }
+        
+        /* Dock Door Movement */
+        @keyframes dock-door-movement {
+          0% { transform: translateY(0); }
+          3.33% { transform: translateY(0); }
+          30% { transform: translateY(0); }
+          50% { transform: translateY(0); }
+          53.33% { transform: translateY(-75px); }
+          60% { transform: translateY(-75px); }
+          63.33% { transform: translateY(0); }
+          100% { transform: translateY(0); }
+        }
+        
+        /* Dock Light Color Changes */
+        @keyframes dock-light-color {
+          0%, 6.67% { fill: #FF0000; }
+          6.67%, 30% { fill: #FF0000; }
+          30%, 50% { fill: #FFD700; }
+          50%, 63.33% { fill: #00CC6F; }
+          63.33%, 100% { fill: #FF0000; }
+        }
+        
+        /* Dock Plate Extension */
+        @keyframes dock-plate-extension {
+          0% { transform: translateX(0) scaleX(0); opacity: 0; }
+          50% { transform: translateX(0) scaleX(0); opacity: 0; }
+          53.33% { transform: translateX(0) scaleX(1); opacity: 1; }
+          60% { transform: translateX(0) scaleX(1); opacity: 1; }
+          63.33% { transform: translateX(0) scaleX(0); opacity: 0; }
+          100% { transform: translateX(0) scaleX(0); opacity: 0; }
+        }
+        
+        /* Dock Bumper Compression */
+        @keyframes dock-bumper-compress {
+          0% { transform: scaleY(1); }
+          50% { transform: scaleY(1); }
+          53.33% { transform: scaleY(0.7); }
+          60% { transform: scaleY(0.7); }
+          63.33% { transform: scaleY(1); }
+          100% { transform: scaleY(1); }
+        }
+        
+        /* Exhaust Smoke Fades - Opacity only, no transforms */
+        @keyframes exhaust-fade-1 {
+          0% { opacity: 0; }
+          25% { opacity: 0.7; }
+          50% { opacity: 0.4; }
+          100% { opacity: 0; }
+        }
+        
+        @keyframes exhaust-fade-2 {
+          0% { opacity: 0; }
+          10% { opacity: 0; }
+          35% { opacity: 0.6; }
+          60% { opacity: 0.3; }
+          100% { opacity: 0; }
+        }
+        
+        @keyframes exhaust-fade-3 {
+          0% { opacity: 0; }
+          20% { opacity: 0; }
+          45% { opacity: 0.5; }
+          70% { opacity: 0.2; }
+          100% { opacity: 0; }
+        }
+        
+        @keyframes exhaust-fade-4 {
+          0% { opacity: 0; }
+          30% { opacity: 0; }
+          55% { opacity: 0.4; }
+          80% { opacity: 0.1; }
+          100% { opacity: 0; }
+        }
+        
+        /* Reefer Steam Fades - Opacity only, no transforms */
+        @keyframes reefer-fade-1 {
+          0% { opacity: 0; }
+          20% { opacity: 0.8; }
+          60% { opacity: 0.4; }
+          100% { opacity: 0; }
+        }
+        
+        @keyframes reefer-fade-2 {
+          0% { opacity: 0; }
+          15% { opacity: 0; }
+          35% { opacity: 0.7; }
+          75% { opacity: 0.3; }
+          100% { opacity: 0; }
+        }
+        
+        @keyframes reefer-fade-3 {
+          0% { opacity: 0; }
+          30% { opacity: 0; }
+          50% { opacity: 0.6; }
+          90% { opacity: 0.2; }
+          100% { opacity: 0; }
+        }
+        
+        /* NEW: Sky Color Transition - Day to Dusk */
+        @keyframes sky-transition {
+          0% { opacity: 1; }      /* Day - full brightness */
+          50% { opacity: 1; }     /* Still day */
+          75% { opacity: 0.7; }   /* Transition to dusk */
+          100% { opacity: 1; }    /* Back to day */
+        }
+        
+        /* NEW: Ground Darkening */
+        @keyframes ground-transition {
+          0% { fill: #3a3a3a; }
+          50% { fill: #3a3a3a; }
+          75% { fill: #2a2a2a; }
+          100% { fill: #3a3a3a; }
+        }
+        
+        /* NEW: Sun Movement - Sets below horizon */
+        @keyframes sun-movement {
+          0% { transform: translateY(0); opacity: 1; }
+          50% { transform: translateY(0); opacity: 1; }
+          75% { transform: translateY(80px); opacity: 0.3; }
+          100% { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* NEW: Headlight Glow Increases at dusk */
+        @keyframes headlight-glow-increase {
+          0% { opacity: 0; }
+          50% { opacity: 0; }
+          75% { opacity: 0.8; }
+          100% { opacity: 0; }
+        }
+        
+        /* NEW: Dock Light Glow */
+        @keyframes dock-light-glow {
+          0% { opacity: 0; }
+          50% { opacity: 0; }
+          75% { opacity: 0.6; }
+          100% { opacity: 0; }
+        }
+      `}</style>
+
+      <svg
+        viewBox="0 0 800 200"
+        className={shouldAnimate ? 'st-baseline-animated' : ''}
+        role="img"
+        aria-label="Truck and trailer at loading dock with animation"
+      >
+        <defs>
+          <linearGradient id="sky-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#87CEEB" />
+            <stop offset="100%" stopColor="#FFFFFF" />
+          </linearGradient>
+          
+          {/* NEW: Dusk gradient overlay */}
+          <linearGradient id="dusk-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#FF6B35" />
+            <stop offset="30%" stopColor="#F7931E" />
+            <stop offset="60%" stopColor="#FDC830" />
+            <stop offset="100%" stopColor="#4A5568" />
+          </linearGradient>
+          
+          <linearGradient id="green-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#00E676" />
+            <stop offset="100%" stopColor="#00A854" />
+          </linearGradient>
+          
+          {/* Radial gradient for smoke effect */}
+          <radialGradient id="smoke-gradient">
+            <stop offset="0%" stopColor="#8a8a8a" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#cccccc" stopOpacity="0" />
+          </radialGradient>
+          
+          {/* Radial gradient for steam effect */}
+          <radialGradient id="steam-gradient">
+            <stop offset="0%" stopColor="#e8f4f8" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+          </radialGradient>
+          
+          {/* NEW: Radial gradient for light glow effects */}
+          <radialGradient id="light-glow">
+            <stop offset="0%" stopColor="#FFD700" stopOpacity="0.8" />
+            <stop offset="50%" stopColor="#FFD700" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#FFD700" stopOpacity="0" />
+          </radialGradient>
+          
+          <radialGradient id="dock-glow">
+            <stop offset="0%" stopColor="#00CC6F" stopOpacity="0.8" />
+            <stop offset="50%" stopColor="#00CC6F" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#00CC6F" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+
+        {/* Sky - Base layer */}
+        <rect width="800" height="150" fill="url(#sky-gradient)" />
+        
+        {/* NEW: Dusk overlay - fades in during evening */}
+        <rect className="st-sky" width="800" height="150" fill="url(#dusk-gradient)" opacity="0" />
+        
+        {/* NEW: Sun - moves down as day progresses */}
+        <circle className="st-sun" cx="700" cy="40" r="25" fill="#FFD700" opacity="0.9" />
+        <circle className="st-sun" cx="700" cy="40" r="30" fill="#FFD700" opacity="0.3" />
+        
+        {/* Ground */}
+        <rect className="st-ground" y="150" width="800" height="50" fill="#3a3a3a" />
+        
+        {/* Yellow parking lines */}
+        <rect x="100" y="185" width="50" height="3" fill="#FFD166" opacity="0.7" />
+        <rect x="600" y="185" width="50" height="3" fill="#FFD166" opacity="0.7" />
+        
+        {/* Dock Building - STATIC */}
+        <rect x="20" y="45" width="95" height="105" fill="#4a4a4a" />
+        
+        {/* Dock door with panels - ANIMATED */}
+        <g className="st-dock-door">
+          <rect x="30" y="70" width="65" height="80" fill="#2a2a2a" stroke="#FFD166" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+          <line x1="30" y1="90" x2="95" y2="90" stroke="#3a3a3a" strokeWidth="2" />
+          <line x1="30" y1="105" x2="95" y2="105" stroke="#3a3a3a" strokeWidth="2" />
+          <line x1="30" y1="120" x2="95" y2="120" stroke="#3a3a3a" strokeWidth="2" />
+          <line x1="30" y1="135" x2="95" y2="135" stroke="#3a3a3a" strokeWidth="2" />
+        </g>
+        
+        {/* Window */}
+        <rect x="100" y="55" width="12" height="12" fill="#87CEEB" stroke="#2a2a2a" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+        
+        {/* Dock Number "3" */}
+        <text x="62" y="62" fontSize="32" fontWeight="bold" fill="#FFD166" fontFamily="Arial" textAnchor="middle">3</text>
+        
+        {/* Dock Sign */}
+        <rect x="90" y="40" width="22" height="10" fill="#2a2a2a" stroke="#FFD166" strokeWidth="1" rx="1" vectorEffect="non-scaling-stroke" />
+        <text x="101" y="47" fontSize="5" fontWeight="bold" fill="#FFD166" fontFamily="Arial" textAnchor="middle">DOCK 3</text>
+        
+        {/* Dock light - ANIMATED COLOR CHANGE */}
+        <circle className="st-dock-light" cx="101" cy="80" r="3" opacity="0.9" />
+        
+        {/* NEW: Dock light glow - appears at dusk */}
+        <circle className="st-dock-light-glow" cx="101" cy="80" r="8" fill="url(#dock-glow)" opacity="0" />
+        
+        {/* Dock bumpers - ANIMATED COMPRESSION */}
+        <g className="st-dock-bumper" style={{ transformOrigin: '31px 147.5px' }}>
+          <rect x="25" y="145" width="12" height="5" fill="#1a1a1a" />
+          <rect x="25" y="145" width="12" height="1" fill="#FFD166" />
+        </g>
+        <g className="st-dock-bumper" style={{ transformOrigin: '101px 147.5px' }}>
+          <rect x="95" y="145" width="12" height="5" fill="#1a1a1a" />
+          <rect x="95" y="145" width="12" height="1" fill="#FFD166" />
+        </g>
+        
+        {/* Dock Plate (loading bridge) - ANIMATED */}
+        <rect 
+          className="st-dock-plate"
+          x="107" 
+          y="146" 
+          width="33" 
+          height="4" 
+          fill="#4a4a4a" 
+          stroke="#2a2a2a" 
+          strokeWidth="1"
+          style={{ transformOrigin: '107px 148px' }}
+          vectorEffect="non-scaling-stroke"
+        />
+        
+        {/* Safety bollard */}
+        <rect x="120" y="130" width="10" height="25" fill="#FFD166" />
+        <rect x="120" y="130" width="10" height="5" fill="#1a1a1a" />
+        <rect x="120" y="140" width="10" height="5" fill="#1a1a1a" />
+        <rect x="120" y="150" width="10" height="5" fill="#1a1a1a" />
+        
+        {/* TRAILER GROUP - Moves independently */}
+        <g className="st-trailer-group">
+          {/* Trailer body */}
+          <rect x="140" y="72" width="300" height="68" fill="#FFFFFF" stroke="#002B36" strokeWidth="2" rx="2" vectorEffect="non-scaling-stroke" />
+          
+          {/* Reefer unit */}
+          <rect x="415" y="75" width="22" height="25" fill="#3a3a3a" stroke="#002B36" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+          <rect x="418" y="79" width="5" height="5" fill="#4a90e2" opacity="0.6" />
+          <rect x="425" y="79" width="5" height="5" fill="#4a90e2" opacity="0.6" />
+          <circle cx="432" cy="81" r="1.5" fill="#00CC6F" opacity="0.8" />
+          <line x1="418" y1="88" x2="432" y2="88" stroke="#2a2a2a" strokeWidth="0.5" />
+          <line x1="418" y1="91" x2="432" y2="91" stroke="#2a2a2a" strokeWidth="0.5" />
+          
+          {/* Branding panel */}
+          <rect x="180" y="85" width="230" height="40" fill="#FFFFFF" stroke="#00CC6F" strokeWidth="2" rx="3" vectorEffect="non-scaling-stroke" />
+          <rect x="180" y="85" width="230" height="6" fill="url(#green-gradient)" rx="3" />
+          
+          {/* Logo box */}
+          <g transform="translate(195, 100)">
+            <rect x="0" y="0" width="15" height="15" fill="url(#green-gradient)" stroke="#FFFFFF" strokeWidth="1" rx="1" vectorEffect="non-scaling-stroke" />
+            <text x="7.5" y="11" fontSize="8" fontWeight="bold" fill="#FFFFFF" fontFamily="Arial" textAnchor="middle">ST</text>
+          </g>
+          
+          {/* SHOWCASE TRANSPORT text */}
+          <text x="295" y="102" fontSize="14" fontWeight="600" fill="#00CC6F" fontFamily="Montserrat, Arial, sans-serif" textAnchor="middle" letterSpacing="0.5">SHOWCASE</text>
+          <text x="295" y="114" fontSize="9" fontWeight="600" fill="#002B36" fontFamily="Montserrat, Arial, sans-serif" textAnchor="middle" letterSpacing="0.5">TRANSPORT</text>
+          <text x="295" y="121" fontSize="4" fill="#666666" fontFamily="Arial" textAnchor="middle" letterSpacing="0.5">PRECISION • RELIABILITY • SAFETY</text>
+          
+          {/* Trailer chassis */}
+          <rect x="145" y="138" width="290" height="3" fill="#002B36" opacity="0.3" />
+          
+          {/* Landing gear - ANIMATED */}
+          <g className="st-landing-gear">
+            <rect x="180" y="138" width="4" height="16" fill="#3a3a3a" rx="1" />
+            <rect x="178" y="154" width="8" height="3" fill="#3a3a3a" rx="1" />
+            
+            <rect x="390" y="138" width="4" height="16" fill="#3a3a3a" rx="1" />
+            <rect x="388" y="154" width="8" height="3" fill="#3a3a3a" rx="1" />
+          </g>
+          
+          {/* Trailer tail lights at back */}
+          <rect x="438" y="78" width="3" height="8" fill="#FF0000" stroke="#1a1a1a" strokeWidth="0.5" rx="0.5" vectorEffect="non-scaling-stroke" />
+          <rect x="438" y="132" width="3" height="8" fill="#FF0000" stroke="#1a1a1a" strokeWidth="0.5" rx="0.5" vectorEffect="non-scaling-stroke" />
+          
+          {/* Trailer wheels with rotation */}
+          <g className="st-wheel" style={{ transformOrigin: '190px 150px' }}>
+            <circle cx="190" cy="150" r="10" fill="#1a1a1a" stroke="#4a4a4a" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+            <circle cx="190" cy="150" r="4" fill="#3a3a3a" />
+            <line x1="186" y1="150" x2="194" y2="150" stroke="#4a4a4a" strokeWidth="1" />
+            <line x1="190" y1="146" x2="190" y2="154" stroke="#4a4a4a" strokeWidth="1" />
+          </g>
+          
+          <g className="st-wheel" style={{ transformOrigin: '215px 150px' }}>
+            <circle cx="215" cy="150" r="10" fill="#1a1a1a" stroke="#4a4a4a" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+            <circle cx="215" cy="150" r="4" fill="#3a3a3a" />
+            <line x1="211" y1="150" x2="219" y2="150" stroke="#4a4a4a" strokeWidth="1" />
+            <line x1="215" y1="146" x2="215" y2="154" stroke="#4a4a4a" strokeWidth="1" />
+          </g>
+          
+          <g className="st-wheel" style={{ transformOrigin: '380px 150px' }}>
+            <circle cx="380" cy="150" r="10" fill="#1a1a1a" stroke="#4a4a4a" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+            <circle cx="380" cy="150" r="4" fill="#3a3a3a" />
+            <line x1="376" y1="150" x2="384" y2="150" stroke="#4a4a4a" strokeWidth="1" />
+            <line x1="380" y1="146" x2="380" y2="154" stroke="#4a4a4a" strokeWidth="1" />
+          </g>
+          
+          <g className="st-wheel" style={{ transformOrigin: '405px 150px' }}>
+            <circle cx="405" cy="150" r="10" fill="#1a1a1a" stroke="#4a4a4a" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+            <circle cx="405" cy="150" r="4" fill="#3a3a3a" />
+            <line x1="401" y1="150" x2="409" y2="150" stroke="#4a4a4a" strokeWidth="1" />
+            <line x1="405" y1="146" x2="405" y2="154" stroke="#4a4a4a" strokeWidth="1" />
+          </g>
+          
+          {/* Kingpin from trailer */}
+          <circle cx="440" cy="140" r="5" fill="#3a3a3a" stroke="#1a1a1a" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+        </g>
+        
+        {/* TRUCK GROUP - Moves independently */}
+        <g className="st-truck-group">
+          {/* Fifth wheel connection - shows/hides */}
+          <g className="st-connection">
+            <ellipse cx="448" cy="143" rx="12" ry="8" fill="#4a4a4a" stroke="#1a1a1a" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+            <circle cx="448" cy="143" r="4" fill="#3a3a3a" />
+            
+            {/* Air/electrical lines to trailer */}
+            <line x1="442" y1="135" x2="442" y2="142" stroke="#FFD700" strokeWidth="1" />
+            <line x1="438" y1="136" x2="438" y2="142" stroke="#DC143C" strokeWidth="1" />
+          </g>
+          
+          {/* Frame rails behind cab */}
+          <rect x="445" y="138" width="3" height="12" fill="#2a2a2a" />
+          <rect x="445" y="145" width="3" height="5" fill="#3a3a3a" />
+          
+          {/* Main cab body */}
+          <rect x="448" y="80" width="82" height="70" fill="#00CC6F" stroke="#002B36" strokeWidth="2" rx="3" vectorEffect="non-scaling-stroke" />
+          
+          {/* Rear of cab panels */}
+          <rect x="450" y="95" width="12" height="35" fill="#00A854" stroke="#002B36" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+          
+          {/* Side windows */}
+          <rect x="467" y="90" width="28" height="26" fill="#87CEEB" stroke="#002B36" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+          
+          {/* Door line */}
+          <line x1="488" y1="116" x2="488" y2="150" stroke="#002B36" strokeWidth="1" opacity="0.4" />
+          
+          {/* Door panel */}
+          <rect x="467" y="118" width="28" height="28" fill="#00A854" stroke="#002B36" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+          <circle cx="491" cy="132" r="1.5" fill="#1a1a1a" />
+          
+          {/* Windshield */}
+          <rect x="497" y="90" width="28" height="28" fill="#A8D5E2" stroke="#002B36" strokeWidth="1" opacity="0.7" vectorEffect="non-scaling-stroke" />
+          
+          {/* Front grille */}
+          <rect x="497" y="120" width="28" height="26" fill="#1a1a1a" stroke="#002B36" strokeWidth="1" />
+          <line x1="497" y1="125" x2="525" y2="125" stroke="#4a4a4a" strokeWidth="0.5" />
+          <line x1="497" y1="130" x2="525" y2="130" stroke="#4a4a4a" strokeWidth="0.5" />
+          <line x1="497" y1="135" x2="525" y2="135" stroke="#4a4a4a" strokeWidth="0.5" />
+          <line x1="497" y1="140" x2="525" y2="140" stroke="#4a4a4a" strokeWidth="0.5" />
+          
+          {/* Front bumper */}
+          <rect x="525" y="120" width="5" height="26" fill="#3a3a3a" stroke="#002B36" strokeWidth="1" />
+          
+          {/* Headlights - ANIMATED */}
+          <circle className="st-headlight" cx="527" cy="105" r="3" fill="#FFD700" stroke="#1a1a1a" strokeWidth="0.5" />
+          <circle className="st-headlight" cx="527" cy="117" r="3" fill="#FFD700" stroke="#1a1a1a" strokeWidth="0.5" />
+          
+          {/* NEW: Headlight glow - appears at dusk */}
+          <circle className="st-headlight-glow" cx="527" cy="105" r="12" fill="url(#light-glow)" opacity="0" />
+          <circle className="st-headlight-glow" cx="527" cy="117" r="12" fill="url(#light-glow)" opacity="0" />
+          
+          {/* Reverse lights - ANIMATED */}
+          <rect className="st-reverse-light" x="452" y="120" width="6" height="6" fill="#FFFFFF" stroke="#1a1a1a" strokeWidth="0.5" rx="1" vectorEffect="non-scaling-stroke" />
+          <rect className="st-reverse-light" x="452" y="130" width="6" height="6" fill="#FFFFFF" stroke="#1a1a1a" strokeWidth="0.5" rx="1" vectorEffect="non-scaling-stroke" />
+          
+          {/* Brake lights - ANIMATED */}
+          <rect className="st-brake-light" x="452" y="85" width="6" height="8" fill="#FF0000" stroke="#1a1a1a" strokeWidth="0.5" rx="1" vectorEffect="non-scaling-stroke" />
+          <rect className="st-brake-light" x="452" y="95" width="6" height="8" fill="#FF0000" stroke="#1a1a1a" strokeWidth="0.5" rx="1" vectorEffect="non-scaling-stroke" />
+          
+          {/* Exhaust stack */}
+          <rect x="488" y="70" width="5" height="12" fill="#3a3a3a" stroke="#1a1a1a" strokeWidth="1" rx="1" vectorEffect="non-scaling-stroke" />
+          <rect x="486" y="70" width="9" height="3" fill="#4a4a4a" rx="1" />
+          
+          {/* Mirror */}
+          <rect x="469" y="98" width="6" height="9" fill="#2a2a2a" stroke="#002B36" strokeWidth="0.5" vectorEffect="non-scaling-stroke" />
+          <line x1="463" y1="102" x2="469" y2="102" stroke="#2a2a2a" strokeWidth="1.5" />
+          
+          {/* Fuel tank under cab */}
+          <ellipse cx="478" cy="145" rx="20" ry="5" fill="#d4d4d4" stroke="#002B36" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+          
+          {/* Air tank */}
+          <ellipse cx="505" cy="145" rx="15" ry="5" fill="#DC143C" stroke="#002B36" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+          
+          {/* Truck wheels with rotation */}
+          <g className="st-wheel" style={{ transformOrigin: '460px 150px' }}>
+            <circle cx="460" cy="150" r="10" fill="#1a1a1a" stroke="#4a4a4a" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+            <circle cx="460" cy="150" r="4" fill="#3a3a3a" />
+            <line x1="456" y1="150" x2="464" y2="150" stroke="#4a4a4a" strokeWidth="1" />
+            <line x1="460" y1="146" x2="460" y2="154" stroke="#4a4a4a" strokeWidth="1" />
+          </g>
+          
+          <g className="st-wheel" style={{ transformOrigin: '515px 150px' }}>
+            <circle cx="515" cy="150" r="10" fill="#1a1a1a" stroke="#4a4a4a" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+            <circle cx="515" cy="150" r="4" fill="#3a3a3a" />
+            <line x1="511" y1="150" x2="519" y2="150" stroke="#4a4a4a" strokeWidth="1" />
+            <line x1="515" y1="146" x2="515" y2="154" stroke="#4a4a4a" strokeWidth="1" />
+          </g>
+        </g>
+        
+        {/* NEW: EXHAUST SMOKE GROUP - Multiple puffs at different heights */}
+        <g className="st-exhaust-group">
+          {/* Puff 1 - At exhaust stack */}
+          <ellipse className="st-exhaust-puff-1" cx="490" cy="68" rx="3" ry="2.5" fill="url(#smoke-gradient)" />
+          
+          {/* Puff 2 - Slightly above */}
+          <ellipse className="st-exhaust-puff-2" cx="488" cy="60" rx="4" ry="3" fill="url(#smoke-gradient)" />
+          
+          {/* Puff 3 - Higher up */}
+          <ellipse className="st-exhaust-puff-3" cx="485" cy="50" rx="5" ry="4" fill="url(#smoke-gradient)" />
+          
+          {/* Puff 4 - Highest */}
+          <ellipse className="st-exhaust-puff-4" cx="482" cy="38" rx="6" ry="5" fill="url(#smoke-gradient)" />
+        </g>
+        
+        {/* NEW: REEFER STEAM GROUP - Multiple puffs descending */}
+        <g className="st-reefer-group">
+          {/* Steam 1 - At reefer unit */}
+          <ellipse className="st-reefer-steam-1" cx="424" cy="100" rx="4" ry="3" fill="url(#steam-gradient)" />
+          
+          {/* Steam 2 - Slightly below */}
+          <ellipse className="st-reefer-steam-2" cx="424" cy="108" rx="5" ry="4" fill="url(#steam-gradient)" />
+          
+          {/* Steam 3 - Lower */}
+          <ellipse className="st-reefer-steam-3" cx="424" cy="118" rx="6" ry="5" fill="url(#steam-gradient)" />
+        </g>
+        
+        {/* Shadows */}
+        <ellipse cx="300" cy="160" rx="150" ry="6" fill="#000000" opacity="0.15" />
+        <ellipse cx="488" cy="160" rx="45" ry="6" fill="#000000" opacity="0.15" />
+      </svg>
+
+      <figcaption className="sr-only">
+        Showcase Transport tractor and trailer at loading dock with complete docking animation sequence including dock operations.
+      </figcaption>
+    </figure>
+  );
+}

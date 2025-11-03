@@ -1,0 +1,190 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap');
+
+/* Tailwind base styles, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  BASE LAYER
+  Apply default styles to HTML elements
+*/
+@layer base {
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F8F9FA;
+    color: #1C1C1C;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #002B36;
+  }
+}
+
+/* 
+  COMPONENTS LAYER
+  Custom reusable component classes
+*/
+@layer components {
+  
+  /* Standard brand button - use for general actions */
+  .brand-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: #00CC6F;
+    color: white;
+    font-weight: 500;
+    border-radius: 1rem;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+    outline: none;
+  }
+  
+  .brand-btn:hover {
+    background-color: #00b362;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  }
+  
+  .brand-btn:active {
+    transform: scale(0.95);
+  }
+  
+  .brand-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #00CC6F;
+  }
+  
+  /* Call-to-action button - use for important actions like "Sign Up" or "Get Started" */
+  .brand-cta {
+    padding: 1rem 2rem;
+    background-color: #FFD166;
+    color: #002B36;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.125rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+    outline: none;
+  }
+  
+  .brand-cta:hover {
+    background-color: #ffc94d;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .brand-cta:active {
+    transform: scale(0.95);
+  }
+  
+  .brand-cta:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #FFD166;
+  }
+  
+  /* Card container - use for content sections, features, or items */
+  .card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+    border: 1px solid #f3f4f6;
+  }
+  
+  .card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+  }
+}
+
+/* 
+  UTILITIES LAYER
+  Additional helper classes if needed
+*/
+@layer utilities {
+  /* Add custom utility classes here if needed */
+  
+  /* Example: Gradient background utility */
+  .bg-brand-gradient {
+    background: linear-gradient(135deg, #00CC6F 0%, #002B36 100%);
+  }
+  
+  /* Example: Text gradient utility */
+  .text-brand-gradient {
+    background: linear-gradient(to right, #00CC6F, #002B36);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  /* Slow pulse animation for RoutePulse component */
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus visible styles for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid #FFD166;
+  outline-offset: 2px;
+}
+
+/* Skip to content link styling */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Ensure smooth rendering for SVG animations */
+.st-dock-container svg {
+  shape-rendering: geometricPrecision;
+}
+
+/* Vector stroke optimization */
+.st-dock-container svg path,
+.st-dock-container svg line,
+.st-dock-container svg rect,
+.st-dock-container svg circle {
+  vector-effect: non-scaling-stroke;
+}
+
+/* Ensure crisp SVG rendering for TruckDockPro */
+.st-dock2-container svg {
+  shape-rendering: geometricPrecision;
+}
