@@ -30,6 +30,14 @@ export default function Contact() {
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-12 space-y-8">
+      {/* Netlify form fallback: lets Netlify detect the form even though React renders it */}
+      <form name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="quote" />
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <textarea name="message"></textarea>
+      </form>
+
       <div className="text-center space-y-2">
         <h1 className="text-4xl font-bold text-st-navy">Request a Quote</h1>
         <p className="text-lg text-st-navy/70">
