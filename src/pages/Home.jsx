@@ -131,53 +131,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-[#0F2931] text-white mt-16">
-        <div className="container mx-auto px-4 py-12">
-          <div className="max-w-6xl mx-auto bg-[#1a3a42] rounded-t-2xl p-8 md:p-12">
-            <div className="flex flex-col md:flex-row md:justify-between gap-8">
-              {/* Left side - Company info */}
-              <div className="text-center md:text-left">
-                <h3 className="text-2xl font-bold mb-2">Showcase Transport LLC</h3>
-                <p className="text-gray-300 mb-4 italic">
-                  Precision Docking. Reliable Freight. Every Time.
-                </p>
-                <a 
-                  href="mailto:dispatch@showcasetransportllc.com"
-                  className="text-[#F2B94C] hover:text-[#FFD166] transition font-semibold"
-                >
-                  dispatch@showcasetransportllc.com
-                </a>
-              </div>
-
-              {/* Right side - Navigation */}
-              <div className="text-center md:text-right">
-                <nav className="flex flex-wrap justify-center md:justify-end gap-6 mb-4">
-                  <Link to="/" className="text-gray-300 hover:text-[#F2B94C] transition font-medium">
-                    Home
-                  </Link>
-                  <Link to="/services" className="text-gray-300 hover:text-[#F2B94C] transition font-medium">
-                    Services
-                  </Link>
-                  <Link to="/values" className="text-gray-300 hover:text-[#F2B94C] transition font-medium">
-                    Values
-                  </Link>
-                  <Link to="/contact" className="text-gray-300 hover:text-[#F2B94C] transition font-medium">
-                    Contact
-                  </Link>
-                </nav>
-              </div>
-            </div>
-
-            <div className="border-t border-gray-600 mt-8 pt-6 text-center">
-              <p className="text-gray-400 text-sm">
-                © {new Date().getFullYear()} Showcase Transport LLC. All rights reserved.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
