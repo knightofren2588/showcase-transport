@@ -2,6 +2,7 @@
 
 import { Link } from 'react-router-dom';
 import TruckSceneBasic from '../components/TruckSceneBasic';
+import ShowcaseTransportLogo from '../components/ShowcaseTransportLogo';
 
 export default function Home() {
   return (
@@ -34,21 +35,9 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Right Column - Placeholder for Logo */}
+            {/* Right Column - Logo */}
             <div className="w-full flex items-center justify-center">
-              <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-12 shadow-lg border border-gray-700 w-full max-w-md">
-                <div className="text-center">
-                  <div className="bg-green-500 w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-white text-3xl font-bold">ST</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    Showcase Transport
-                  </h3>
-                  <p className="text-gray-300 text-sm">
-                    Professional Freight Solutions
-                  </p>
-                </div>
-              </div>
+              <ShowcaseTransportLogo size="large" className="drop-shadow-2xl" />
             </div>
           </div>
         </div>
