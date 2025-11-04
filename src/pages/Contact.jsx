@@ -2,27 +2,43 @@ import { useState } from "react";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
     setError("");
+    setLoading(true);
 
     const form = e.target;
-    const data = new FormData(form);
+    const formData = new FormData(form);
 
-    // VERY IMPORTANT: Netlify needs this field
-    data.set("form-name", "quote");
+    // Convert FormData to object
+    const payload = {};
+    formData.forEach((value, key) => {
+      payload[key] = value;
+    });
 
     try {
-      await fetch("/", {
+      const response = await fetch("/.netlify/functions/send-quote", {
         method: "POST",
-        body: data,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
-      setSent(true);
-      form.reset();
+
+      if (response.ok) {
+        setSent(true);
+        form.reset();
+      } else {
+        const data = await response.json();
+        setError(data.error || "Something went wrong. Please try again.");
+      }
     } catch (err) {
       setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -179,8 +195,8 @@ export default function Contact() {
 
         {error && <p className="text-red-600">{error}</p>}
 
-        <button type="submit" className="brand-btn">
-          Send Request
+        <button type="submit" className="brand-btn" disabled={loading}>
+          {loading ? "Sending..." : "Send Request"}
         </button>
       </form>
 
