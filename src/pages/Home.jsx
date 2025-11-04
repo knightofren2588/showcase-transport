@@ -37,7 +37,7 @@ export default function Home() {
             
             {/* Right Column - Logo */}
             <div className="w-full flex items-center justify-center">
-              <ShowcaseTransportLogo size="large" className="drop-shadow-2xl" />
+              <ShowcaseTransportLogo size="xlarge" className="drop-shadow-2xl" />
             </div>
           </div>
         </div>

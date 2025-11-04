@@ -4,7 +4,8 @@ export default function ShowcaseTransportLogo({ className = '', size = 'large' }
   const sizes = {
     small: { width: 120, height: 120, fontSize: 32 },
     medium: { width: 180, height: 180, fontSize: 48 },
-    large: { width: 240, height: 240, fontSize: 64 }
+    large: { width: 240, height: 240, fontSize: 64 },
+    xlarge: { width: 360, height: 360, fontSize: 96 }
   };
 
   const { width, height, fontSize } = sizes[size] || sizes.large;
