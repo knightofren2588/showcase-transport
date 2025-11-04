@@ -126,12 +126,6 @@ export default function Home() {
                 >
                   Request a Quote
                 </Link>
-                <a
-                  href="tel:555-123-4567"
-                  className="text-[#FFD166] hover:text-[#FFE599] font-semibold transition underline"
-                >
-                  Call dispatch
-                </a>
               </div>
             </div>
           </div>
