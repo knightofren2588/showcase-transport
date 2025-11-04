@@ -13,11 +13,11 @@ export const handler = async (event) => {
   try {
     const data = JSON.parse(event.body);
 
-    // 1️⃣ Send to the client (your inbox for now)
+    // Send email only to your inbox (client's inbox later)
     await resend.emails.send({
-      from: "Showcase Transport <info@showcasetransportllc.com>",
-      to: ["mike@starktechstudios.com"], // client's inbox (temporary)
-      reply_to: data.email, // reply goes to user's email
+      from: "Showcase Transport <no-reply@showcasetransportllc.com>", // keep the verified domain
+      to: ["mike@starktechstudios.com"], // currently your inbox
+      reply_to: data.email,              // reply goes to whoever filled out the form
       subject: "New Quote Request — Showcase Transport",
       html: `
         <h2>New Quote Request</h2>
@@ -31,26 +31,6 @@ export const handler = async (event) => {
         <p><strong>Message:</strong><br>${(data.message || "").replace(/\n/g, "<br>")}</p>
       `,
     });
-
-    // 2️⃣ Send confirmation back to the user's typed email
-    if (data.email) {
-      await resend.emails.send({
-        from: "Showcase Transport <info@showcasetransportllc.com>",
-        to: [data.email], // email from the form
-        subject: "We received your quote request",
-        html: `
-          <h2>Thanks, ${data.name || "there"}!</h2>
-          <p>Your quote request has been received by Showcase Transport.</p>
-          <p><strong>Summary:</strong></p>
-          <ul>
-            <li><strong>Origin:</strong> ${data.origin || ""}</li>
-            <li><strong>Destination:</strong> ${data.destination || ""}</li>
-            <li><strong>Load Type:</strong> ${data.loadType || ""}</li>
-          </ul>
-          <p>We'll be in touch soon. This message confirms your form was submitted successfully.</p>
-        `,
-      });
-    }
 
     return {
       statusCode: 200,
