@@ -55,6 +55,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* About Section */}
+      <section id="about" className="bg-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto bg-[#F4F5F6] rounded-2xl p-8 md:p-12">
+            <div className="text-center mb-8">
+              <p className="text-sm font-semibold text-green-500 uppercase tracking-wide mb-2">
+                About Showcase Transport
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0F2931] mb-4">
+                Experienced Freight Partner You Can Count On
+              </h2>
+              <p className="text-lg text-[#0F2931]/70 max-w-3xl mx-auto leading-relaxed">
+                Showcase Transport specializes in dock-to-dock freight solutions with precision docking maneuvers that keep your operations running smoothly. Our safety-minded drivers and commitment to on-time delivery make us the trusted choice for businesses across the region seeking reliable freight services.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6 mt-12">
+              <div className="bg-white rounded-lg p-6 text-center shadow-sm">
+                <div className="text-3xl font-bold text-green-500 mb-2">10+</div>
+                <p className="text-[#0F2931] font-semibold">Years Combined Experience</p>
+              </div>
+              <div className="bg-white rounded-lg p-6 text-center shadow-sm">
+                <div className="text-3xl font-bold text-green-500 mb-2">100%</div>
+                <p className="text-[#0F2931] font-semibold">On-Time Delivery Focus</p>
+              </div>
+              <div className="bg-white rounded-lg p-6 text-center shadow-sm">
+                <div className="text-3xl font-bold text-green-500 mb-2">★★★★★</div>
+                <p className="text-[#0F2931] font-semibold">Safety-Minded Drivers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
