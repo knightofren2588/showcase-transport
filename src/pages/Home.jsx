@@ -104,6 +104,39 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <section className="bg-[#0F2931] py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto bg-gradient-to-br from-[#1a3a42] to-[#0F2931] rounded-2xl p-8 md:p-12 shadow-xl">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              <div className="text-center md:text-left">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+                  Ready to schedule a load?
+                </h2>
+                <p className="text-gray-300 text-lg max-w-xl">
+                  Tell us about your shipment and we'll get back with a fast, accurate quote.
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 items-center md:items-end md:flex-shrink-0">
+                <Link
+                  to="/contact"
+                  className="brand-btn bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition w-full sm:w-auto text-center"
+                >
+                  Request a Quote
+                </Link>
+                <a
+                  href="tel:555-123-4567"
+                  className="text-[#FFD166] hover:text-[#FFE599] font-semibold transition underline"
+                >
+                  Call dispatch
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
