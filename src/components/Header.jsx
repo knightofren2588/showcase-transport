@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import VersionBadge from './VersionBadge';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,75 +16,80 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 text-white shadow-lg" style={{backgroundColor: '#002B36'}}>
-      <a 
-        href="#main-content" 
-        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-st-gold focus:text-st-navy focus:rounded"
-      >
-        Skip to content
-      </a>
-      
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+    <header className="bg-[#1a2332] shadow-lg sticky top-0 z-50">
+      {/* Top Bar with Version Badge */}
+      <div className="bg-[#0f1419] py-1 px-4 flex justify-end items-center border-b border-gray-700">
+        <VersionBadge />
+      </div>
+
+      {/* Main Navigation */}
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link 
-            to="/" 
-            className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-st-gold focus:ring-offset-2 focus:ring-offset-st-navy rounded transition-all"
-          >
-            <div className="flex items-center gap-2">
-              <div className="font-bold text-xl px-3 py-1 rounded" style={{backgroundColor: '#FFD166', color: '#002B36'}}>
-                ST
+          <Link to="/" className="flex items-center space-x-2 group">
+            <div className="relative">
+              <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-200 shadow-lg">
+                <span className="text-white font-bold text-xl">ST</span>
               </div>
-              <span className="text-white font-heading font-bold text-xl">
-                Showcase Transport
-              </span>
+              <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+            </div>
+            <div className="hidden sm:block">
+              <div className="text-white font-bold text-lg">Showcase Transport</div>
+              <div className="text-green-400 text-xs -mt-1">Premium Logistics</div>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map(link => (
               <NavLink
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-                  `font-medium transition-colors hover:text-st-gold focus:outline-none focus:ring-2 focus:ring-st-gold focus:ring-offset-2 focus:ring-offset-st-navy rounded px-2 py-1 ${
-                    isActive ? 'text-st-gold border-b-2 border-st-gold' : 'text-white'
+                  `text-sm font-medium transition-colors duration-200 ${
+                    isActive
+                      ? 'text-green-400'
+                      : 'text-gray-300 hover:text-white'
                   }`
                 }
-                aria-current={({ isActive }) => isActive ? 'page' : undefined}
               >
                 {link.label}
               </NavLink>
             ))}
             <Link
               to="/contact"
-              className="brand-btn"
+              className="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-2 rounded-lg font-medium hover:from-green-600 hover:to-green-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               Get a Quote
             </Link>
-          </nav>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 focus:outline-none focus:ring-2 focus:ring-st-gold rounded transition-colors"
-            aria-label="Toggle mobile menu"
-            aria-expanded={mobileMenuOpen}
+            className="md:hidden text-white p-2"
+            aria-label="Toggle menu"
           >
             <svg
               className="w-6 h-6"
               fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
               stroke="currentColor"
+              viewBox="0 0 24 24"
             >
               {mobileMenuOpen ? (
-                <path d="M6 18L18 6M6 6l12 12" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               )}
             </svg>
           </button>
@@ -91,19 +97,20 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-st-navy/20" aria-label="Mobile navigation">
-            <div className="flex flex-col gap-3">
+          <div className="md:hidden pb-4">
+            <div className="flex flex-col space-y-3">
               {navLinks.map(link => (
                 <NavLink
                   key={link.to}
                   to={link.to}
                   onClick={() => setMobileMenuOpen(false)}
                   className={({ isActive }) =>
-                    `px-4 py-2 rounded transition-all focus:outline-none focus:ring-2 focus:ring-st-gold focus:ring-offset-2 focus:ring-offset-st-navy ${
-                      isActive ? 'bg-st-gold text-st-navy font-semibold' : 'text-white hover:bg-st-navy/50'
+                    `text-sm font-medium px-3 py-2 rounded-lg transition-colors duration-200 ${
+                      isActive
+                        ? 'bg-green-600 text-white'
+                        : 'text-gray-300 hover:bg-gray-700 hover:text-white'
                     }`
                   }
-                  aria-current={({ isActive }) => isActive ? 'page' : undefined}
                 >
                   {link.label}
                 </NavLink>
@@ -111,14 +118,14 @@ export default function Header() {
               <Link
                 to="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="brand-btn mx-4 mt-2 text-center"
+                className="bg-gradient-to-r from-green-500 to-green-600 text-white px-3 py-2 rounded-lg font-medium text-center hover:from-green-600 hover:to-green-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
               >
                 Get a Quote
               </Link>
             </div>
-          </nav>
+          </div>
         )}
-      </div>
+      </nav>
     </header>
   );
 }
