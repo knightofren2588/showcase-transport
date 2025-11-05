@@ -36,6 +36,7 @@ export default function Contact() {
         setError(data.error || "Something went wrong. Please try again.");
       }
     } catch (err) {
+      console.error("Form submission error:", err);
       setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
@@ -72,23 +73,9 @@ export default function Contact() {
       </div>
 
       <form
-        name="quote"
-        method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
         className="bg-white shadow-soft rounded-2xl p-8 space-y-6"
       >
-        {/* Netlify needs this */}
-        <input type="hidden" name="form-name" value="quote" />
-
-        {/* Honeypot */}
-        <p className="hidden">
-          <label>
-            Don't fill this out: <input name="bot-field" />
-          </label>
-        </p>
-
         <div>
           <label className="block font-semibold text-st-navy" htmlFor="name">
             Name *
@@ -193,9 +180,13 @@ export default function Contact() {
           ></textarea>
         </div>
 
-        {error && <p className="text-red-600">{error}</p>}
+        {error && (
+          <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+            {error}
+          </div>
+        )}
 
-        <button type="submit" className="brand-btn" disabled={loading}>
+        <button type="submit" className="brand-btn w-full" disabled={loading}>
           {loading ? "Sending..." : "Send Request"}
         </button>
       </form>

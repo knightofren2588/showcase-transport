@@ -1,0 +1,10 @@
+{
+  "name": "showcase-transport-functions",
+  "version": "1.0.0",
+  "description": "Netlify Functions for Showcase Transport",
+  "type": "module",
+  "dependencies": {
+    "resend": "^3.0.0"
+  }
+}
+
