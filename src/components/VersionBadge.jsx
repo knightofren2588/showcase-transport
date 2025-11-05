@@ -53,7 +53,7 @@ export default function VersionBadge() {
                   <span className="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full">
                     INITIAL RELEASE
                   </span>
-                  <span className="text-gray-400 text-sm">November 2024</span>
+                  <span className="text-gray-400 text-sm">November 2025</span>
                 </div>
 
                 {/* Core Features */}
@@ -268,7 +268,7 @@ export default function VersionBadge() {
                     Built with 💚 by <span className="text-green-400 font-semibold">StarktechStudios</span>
                   </p>
                   <p className="text-gray-500 text-xs">
-                    Chillicothe, Ohio • Project Launch: November 2024
+                    Chillicothe, Ohio • Project Launch: November 2025
                   </p>
                   <p className="text-gray-500 text-xs mt-2">
                     463 Church Street, Chillicothe, OH 45601 • mike@starktechstudios.com

@@ -17,30 +17,31 @@ export default function Header() {
 
   return (
     <header className="bg-[#1a2332] shadow-lg sticky top-0 z-50">
-      {/* Top Bar with Version Badge */}
-      <div className="bg-[#0f1419] py-1 px-4 flex justify-end items-center border-b border-gray-700">
-        <VersionBadge />
-      </div>
-
       {/* Main Navigation */}
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-200 shadow-lg">
-                <span className="text-white font-bold text-xl">ST</span>
+          {/* Logo + Version Badge */}
+          <div className="flex items-center gap-3">
+            <Link to="/" className="flex items-center space-x-2 group">
+              <div className="relative">
+                <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-200 shadow-lg">
+                  <span className="text-white font-bold text-xl">ST</span>
+                </div>
+                <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
               </div>
-              <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
-            </div>
+              <div className="hidden sm:block">
+                <div className="text-white font-bold text-lg">Showcase Transport</div>
+                <div className="text-green-400 text-xs -mt-1">Premium Logistics</div>
+              </div>
+            </Link>
+            
+            {/* Version Badge - Next to Logo */}
             <div className="hidden sm:block">
-              <div className="text-white font-bold text-lg">Showcase Transport</div>
-              <div className="text-green-400 text-xs -mt-1">Premium Logistics</div>
+              <VersionBadge />
             </div>
-          </Link>
-
+          </div>
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navLinks.map(link => (
               <NavLink
                 key={link.to}
@@ -122,6 +123,11 @@ export default function Header() {
               >
                 Get a Quote
               </Link>
+              
+              {/* Version Badge - Mobile */}
+              <div className="flex justify-center pt-2">
+                <VersionBadge />
+              </div>
             </div>
           </div>
         )}
