@@ -20,18 +20,15 @@ export default function Home() {
                 Watch our professional drivers execute perfect backing maneuvers with safety and efficiency.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-  to="/contact"
-  className="brand-btn w-full sm:w-auto text-center"
->
-  Request a Quote
+              <Link to="/contact" className="brand-btn inline-block text-center">
+  Get a Quote
 </Link>
-                <Link
-                  to="/services"
-                  className="brand-cta inline-block text-center border-2 border-gray-900 text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-900 hover:text-white transition"
-                >
-                  Learn More
-                </Link>
+<Link
+  to="/services"
+  className="brand-cta inline-block text-center"
+>
+  Learn More
+</Link>
               </div>
             </div>
             
