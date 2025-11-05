@@ -3,7 +3,11 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const handler = async (event) => {
+  console.log("🚀 Function called!");
+  console.log("HTTP Method:", event.httpMethod);
+  
   if (event.httpMethod !== "POST") {
+    console.log("❌ Wrong HTTP method");
     return {
       statusCode: 405,
       body: JSON.stringify({ error: "Method not allowed" }),
@@ -11,13 +15,23 @@ export const handler = async (event) => {
   }
 
   try {
+    console.log("📝 Parsing form data...");
     const data = JSON.parse(event.body);
+    console.log("Form data received:", { 
+      name: data.name, 
+      email: data.email,
+      company: data.company 
+    });
 
-    // Send email using your verified domain
-    await resend.emails.send({
-      from: "Showcase Transport <noreply@showcasetransportllc.com>", // Using your verified domain
-      to: ["mike@starktechstudios.com"], // Now this will work!
-      reply_to: data.email, // Reply goes to whoever filled out the form
+    console.log("📧 Checking API key...");
+    console.log("API Key exists:", !!process.env.RESEND_API_KEY);
+    console.log("API Key starts with:", process.env.RESEND_API_KEY?.substring(0, 8));
+
+    console.log("📤 Sending email via Resend...");
+    const result = await resend.emails.send({
+      from: "Showcase Transport <noreply@showcasetransportllc.com>",
+      to: ["mike@starktechstudios.com"],
+      reply_to: data.email,
       subject: "New Quote Request — Showcase Transport",
       html: `
         <h2>New Quote Request</h2>
@@ -32,12 +46,19 @@ export const handler = async (event) => {
       `,
     });
 
+    console.log("✅ Email sent successfully!");
+    console.log("Resend response:", JSON.stringify(result, null, 2));
+
     return {
       statusCode: 200,
       body: JSON.stringify({ success: true }),
     };
   } catch (err) {
-    console.error("Error sending email:", err);
+    console.error("❌ ERROR sending email:", err);
+    console.error("Error name:", err.name);
+    console.error("Error message:", err.message);
+    console.error("Full error:", JSON.stringify(err, null, 2));
+    
     return {
       statusCode: 500,
       body: JSON.stringify({ error: err.message }),
