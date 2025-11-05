@@ -58,53 +58,35 @@
 
   /* Standard brand button - use for general actions */
 
-  .brand-btn {
+/* Standard brand button - use for general actions */
+.brand-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #059669;
+  color: white;
+  font-weight: 500;
+  border-radius: 1rem;
+  border: none;  /* ✅ Explicitly remove any borders */
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
+  outline: none;
+  text-decoration: none;  /* ✅ Remove underline on links */
+  display: inline-block;  /* ✅ Ensure proper rendering */
+}
 
-    padding: 0.75rem 1.5rem;
+.brand-btn:hover {
+  background-color: #047857;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  text-decoration: none;  /* ✅ Keep no underline on hover */
+}
 
-    background-color: #059669;
+.brand-btn:active {
+  transform: scale(0.95);
+}
 
-    color: white;
-
-    font-weight: 500;
-
-    border-radius: 1rem;
-
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
-
-    transition: all 0.3s;
-
-    outline: none;
-
-  }
-
-  
-
-  .brand-btn:hover {
-
-    background-color: #047857;
-
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-
-  }
-
-  
-
-  .brand-btn:active {
-
-    transform: scale(0.95);
-
-  }
-
-  
-
-  .brand-btn:focus {
-
-    outline: none;
-
-    box-shadow: 0 0 0 2px white, 0 0 0 4px #059669;
-
-  }
+.brand-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px #059669;
+}
 
   
 
