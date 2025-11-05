@@ -22,7 +22,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/contact"
-                  className="brand-btn inline-block text-center bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition"
+                  className="brand-btn inline-block text-center bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition"
                 >
                   Get a Quote
                 </Link>
@@ -60,7 +60,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto bg-[#F4F5F6] rounded-2xl p-8 md:p-12">
             <div className="text-center mb-8">
-              <p className="text-sm font-semibold text-green-500 uppercase tracking-wide mb-2">
+              <p className="text-sm font-semibold text-green-700 uppercase tracking-wide mb-2">
                 About Showcase Transport
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-[#0F2931] mb-4">
@@ -72,15 +72,15 @@ export default function Home() {
             </div>
             <div className="grid md:grid-cols-3 gap-6 mt-12">
               <div className="bg-white rounded-lg p-6 text-center shadow-sm">
-                <div className="text-3xl font-bold text-green-500 mb-2">10+</div>
+                <div className="text-3xl font-bold text-green-700 mb-2">10+</div>
                 <p className="text-[#0F2931] font-semibold">Years Combined Experience</p>
               </div>
               <div className="bg-white rounded-lg p-6 text-center shadow-sm">
-                <div className="text-3xl font-bold text-green-500 mb-2">100%</div>
+                <div className="text-3xl font-bold text-green-700 mb-2">100%</div>
                 <p className="text-[#0F2931] font-semibold">On-Time Delivery Focus</p>
               </div>
               <div className="bg-white rounded-lg p-6 text-center shadow-sm">
-                <div className="text-3xl font-bold text-green-500 mb-2">★★★★★</div>
+                <div className="text-3xl font-bold text-green-700 mb-2">★★★★★</div>
                 <p className="text-[#0F2931] font-semibold">Safety-Minded Drivers</p>
               </div>
             </div>
@@ -122,7 +122,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 items-center md:items-end md:flex-shrink-0">
                 <Link
                   to="/contact"
-                  className="brand-btn bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition w-full sm:w-auto text-center"
+                  className="brand-btn bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition w-full sm:w-auto text-center"
                 >
                   Request a Quote
                 </Link>
