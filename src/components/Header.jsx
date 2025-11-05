@@ -18,10 +18,10 @@ export default function Header() {
   return (
     <header className="bg-[#1a2332] shadow-lg sticky top-0 z-50">
       {/* Main Navigation */}
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="w-full">
         <div className="flex justify-between items-center h-16">
           {/* Logo + Version Badge */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 pl-4 sm:pl-6 lg:pl-8">
             <Link to="/" className="flex items-center space-x-2 group">
               <div className="relative">
                 <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-200 shadow-lg">
@@ -41,7 +41,7 @@ export default function Header() {
             </div>
           </div>
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-6 pr-4 sm:pr-6 lg:pr-8">
             {navLinks.map(link => (
               <NavLink
                 key={link.to}
@@ -68,7 +68,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-white p-2"
+            className="md:hidden text-white p-2 pr-4"
             aria-label="Toggle menu"
           >
             <svg
@@ -98,7 +98,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden pb-4">
+          <div className="md:hidden pb-4 pl-4 sm:pl-6 lg:pl-8 pr-4">
             <div className="flex flex-col space-y-3">
               {navLinks.map(link => (
                 <NavLink
