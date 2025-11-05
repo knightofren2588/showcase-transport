@@ -30,7 +30,7 @@ export const handler = async (event) => {
     console.log("📤 Sending email via Resend...");
     const result = await resend.emails.send({
       from: "Showcase Transport <quotes@showcasetransportllc.com>",
-      to: ["thefirstorder8866@gmail.com"],
+      to: ["mike@starktechstudios.com"],
       reply_to: data.email,
       subject: "New Quote Request — Showcase Transport",
       html: `
