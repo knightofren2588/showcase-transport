@@ -22,7 +22,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/contact"
-                  className="brand-btn inline-block text-center bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition"
+                  className="brand-btn inline-block text-center"
                 >
                   Get a Quote
                 </Link>
@@ -122,7 +122,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 items-center md:items-end md:flex-shrink-0">
                 <Link
                   to="/contact"
-                  className="brand-btn bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition w-full sm:w-auto text-center"
+                  className="brand-btn w-full sm:w-auto text-center"
                 >
                   Request a Quote
                 </Link>
