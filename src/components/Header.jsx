@@ -58,8 +58,7 @@ export default function Header() {
             ))}
             <Link
               to="/contact"
-              className="px-6 py-2 font-semibold rounded-lg hover:bg-opacity-90 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-st-gold focus:ring-offset-2 focus:ring-offset-st-navy"
-              style={{backgroundColor: '#FFD166', color: '#002B36'}}
+              className="brand-btn"
             >
               Get a Quote
             </Link>
@@ -112,8 +111,7 @@ export default function Header() {
               <Link
                 to="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mx-4 mt-2 px-6 py-3 font-semibold rounded-lg text-center hover:bg-opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-st-gold focus:ring-offset-2 focus:ring-offset-st-navy"
-                style={{backgroundColor: '#FFD166', color: '#002B36'}}
+                className="brand-btn mx-4 mt-2 text-center"
               >
                 Get a Quote
               </Link>
