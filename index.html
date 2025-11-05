@@ -1,37 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Showcase Transport | Precision Docking & Freight Services</title>
-    <meta
-      name="description"
-      content="Showcase Transport provides safe, on-time freight services, precision docking, palletized loads, and dedicated transport for businesses that need reliability every trip."
-    />
-
-    <!-- Open Graph (Facebook, LinkedIn) -->
-    <meta property="og:title" content="Showcase Transport | Precision Docking & Freight Services" />
-    <meta
-      property="og:description"
-      content="Safe, reliable freight movement — dock-to-dock, palletized, and time-sensitive loads."
-    />
+    
+    <!-- Primary Meta Tags -->
+    <title>Showcase Transport LLC | Precision Docking & Freight Services</title>
+    <meta name="title" content="Showcase Transport LLC | Precision Docking & Freight Services" />
+    <meta name="description" content="Professional logistics and transportation solutions with precision docking services. Expert freight handling and transportation management." />
+    <meta name="keywords" content="logistics, transportation, freight services, docking, trucking, shipping" />
+    <meta name="author" content="StarktechStudios" />
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://showcasetransportllc.com/" />
-    <meta property="og:image" content="https://showcasetransportllc.com/og-image.jpg" />
-
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Showcase Transport | Precision Docking & Freight Services" />
-    <meta
-      name="twitter:description"
-      content="Freight solutions backed by safety, communication, and on-time delivery."
-    />
-    <meta name="twitter:image" content="https://showcasetransportllc.com/og-image.jpg" />
-
-    <!-- optional: brand color for mobile -->
-    <meta name="theme-color" content="#0F2931" />
+    <meta property="og:title" content="Showcase Transport LLC | Precision Docking & Freight Services" />
+    <meta property="og:description" content="Professional logistics and transportation solutions with precision docking services." />
+    <meta property="og:image" content="https://showcasetransportllc.com/og-image.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://showcasetransportllc.com/" />
+    <meta property="twitter:title" content="Showcase Transport LLC | Precision Docking & Freight Services" />
+    <meta property="twitter:description" content="Professional logistics and transportation solutions with precision docking services." />
+    <meta property="twitter:image" content="https://showcasetransportllc.com/og-image.png" />
+    
+    <!-- PWA / Web App -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#10b981" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Showcase Transport" />
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-192x192.png" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body>
     <!-- Netlify static form fallback -->
@@ -41,7 +55,23 @@
       <input type="email" name="email" />
       <textarea name="message"></textarea>
     </form>
+    
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+              console.log('SW registered: ', registration);
+            })
+            .catch(registrationError => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
   </body>
 </html>

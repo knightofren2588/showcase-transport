@@ -15,7 +15,7 @@ export default function VersionBadge() {
         title="View Release Notes"
       >
         <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
-        <span className="text-xs font-bold text-white">v1.0.0</span>
+        <span className="text-xs font-bold text-white">v1.0.1</span>
       </button>
 
       {/* Release Notes Modal */}
@@ -44,6 +44,156 @@ export default function VersionBadge() {
             {/* Modal Content */}
             <div className="px-6 py-6 overflow-y-auto max-h-[calc(90vh-100px)] custom-scrollbar">
               
+              {/* Version 1.0.1 - PWA Update */}
+              <div className="mb-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="px-3 py-1 bg-green-600 text-white text-sm font-bold rounded-full">
+                    v1.0.1
+                  </span>
+                  <span className="px-3 py-1 bg-purple-600 text-white text-xs font-semibold rounded-full">
+                    PWA UPDATE
+                  </span>
+                  <span className="text-gray-400 text-sm">November 2025</span>
+                </div>
+
+                {/* PWA Features */}
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold text-purple-400 mb-3 flex items-center gap-2">
+                    📱 Progressive Web App Implementation
+                  </h3>
+                  <div className="space-y-2 text-gray-300">
+                    <div className="flex items-start gap-2">
+                      <span className="text-purple-400 mt-1">▹</span>
+                      <span>Full PWA support - users can now install the website as an app on any device</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-purple-400 mt-1">▹</span>
+                      <span>Service worker implementation for offline functionality and caching</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-purple-400 mt-1">▹</span>
+                      <span>Web app manifest with complete metadata for installation</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-purple-400 mt-1">▹</span>
+                      <span>Custom app icons in 8 sizes (72px to 512px) with professional design</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-purple-400 mt-1">▹</span>
+                      <span>Add to home screen functionality for iPhone, Android, and Desktop</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-purple-400 mt-1">▹</span>
+                      <span>Standalone app mode - launches without browser chrome</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-purple-400 mt-1">▹</span>
+                      <span>Intelligent caching for faster load times and offline access</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Technical Enhancements */}
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold text-cyan-400 mb-3 flex items-center gap-2">
+                    🛠️ Technical Enhancements
+                  </h3>
+                  <div className="space-y-2 text-gray-300">
+                    <div className="flex items-start gap-2">
+                      <span className="text-cyan-400 mt-1">▹</span>
+                      <span>Service Worker (sw.js) - Handles caching and offline functionality</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-cyan-400 mt-1">▹</span>
+                      <span>App Manifest (manifest.json) - Configures app behavior and appearance</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-cyan-400 mt-1">▹</span>
+                      <span>Updated HTML meta tags for PWA compatibility</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-cyan-400 mt-1">▹</span>
+                      <span>Apple Touch Icons for iOS home screen integration</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-cyan-400 mt-1">▹</span>
+                      <span>Theme color configuration matching brand identity</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* User Benefits */}
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold text-yellow-400 mb-3 flex items-center gap-2">
+                    ✨ User Benefits
+                  </h3>
+                  <div className="space-y-2 text-gray-300">
+                    <div className="flex items-start gap-2">
+                      <span className="text-yellow-400 mt-1">▹</span>
+                      <span>Install website as native app on home screen (no app store needed)</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-yellow-400 mt-1">▹</span>
+                      <span>Faster loading with intelligent caching system</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-yellow-400 mt-1">▹</span>
+                      <span>Works offline - view cached pages without internet</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-yellow-400 mt-1">▹</span>
+                      <span>App-like experience with full-screen mode</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-yellow-400 mt-1">▹</span>
+                      <span>No browser bars - clean, professional interface</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-yellow-400 mt-1">▹</span>
+                      <span>Automatic updates when new version deployed</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Icon Design */}
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold text-pink-400 mb-3 flex items-center gap-2">
+                    🎨 Professional App Icons
+                  </h3>
+                  <div className="space-y-2 text-gray-300">
+                    <div className="flex items-start gap-2">
+                      <span className="text-pink-400 mt-1">▹</span>
+                      <span>8 icon sizes covering all device requirements (72px - 512px)</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-pink-400 mt-1">▹</span>
+                      <span>Dark navy background matching website header design</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-pink-400 mt-1">▹</span>
+                      <span>Glowing green border ring with professional edge effect</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-pink-400 mt-1">▹</span>
+                      <span>Central green badge with radial gradient for depth</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-pink-400 mt-1">▹</span>
+                      <span>3D shadows and highlights for realistic appearance</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-pink-400 mt-1">▹</span>
+                      <span>Animated pulse indicator with glow effect</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-pink-400 mt-1">▹</span>
+                      <span>Decorative road lines reinforcing logistics theme</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
               {/* Version 1.0.0 - Initial Release */}
               <div className="mb-8">
                 <div className="flex items-center gap-3 mb-4">
@@ -272,6 +422,9 @@ export default function VersionBadge() {
                   </p>
                   <p className="text-gray-500 text-xs mt-2">
                     463 Church Street, Chillicothe, OH 45601 • mike@starktechstudios.com
+                  </p>
+                  <p className="text-gray-500 text-xs mt-3">
+                    Current Version: v1.0.1 • Last Updated: November 2025
                   </p>
                 </div>
               </div>
