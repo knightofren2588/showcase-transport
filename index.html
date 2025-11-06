@@ -14,7 +14,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <!-- Note: CSP upgrade-insecure-requests is handled by Netlify _headers in production -->
 
     
 
@@ -44,8 +44,6 @@
 
     <meta property="og:description" content="Professional logistics and transportation solutions with precision docking services." />
 
-    <meta property="og:image" content="https://showcasetransportllc.com/og-image.png" />
-
     
 
     <!-- Twitter -->
@@ -58,15 +56,13 @@
 
     <meta property="twitter:description" content="Professional logistics and transportation solutions with precision docking services." />
 
-    <meta property="twitter:image" content="https://showcasetransportllc.com/og-image.png" />
-
     
 
     <!-- PWA / Web App -->
 
     <link rel="manifest" href="/manifest.json" />
 
-    <meta name="theme-color" content="#10b981" />
+    <meta name="theme-color" content="#0F2931" />
 
     <meta name="mobile-web-app-capable" content="yes" />
 
@@ -124,7 +120,8 @@
 
     <script>
 
-      if ('serviceWorker' in navigator) {
+      // Only register service worker in production (not on localhost)
+      if ('serviceWorker' in navigator && !window.location.hostname.includes('localhost')) {
 
         window.addEventListener('load', () => {
 

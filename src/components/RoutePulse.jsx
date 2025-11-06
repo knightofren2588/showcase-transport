@@ -15,7 +15,7 @@ export default function RoutePulse() {
         {/* Dashed route path */}
         <path
           d="M 20 40 Q 70 20, 140 40 T 260 40"
-          stroke="#002B36"
+          stroke="#0F2931"
           strokeWidth="2"
           strokeDasharray="8 6"
           strokeLinecap="round"
@@ -45,8 +45,8 @@ export default function RoutePulse() {
 
         {/* Stop 2 - Animated circle with delay */}
         <g className="animate-pulse-slow" style={{ animationDelay: '0.7s' }}>
-          <circle cx="140" cy="40" r="8" fill="#FFD166" />
-          <circle cx="140" cy="40" r="8" fill="#FFD166" opacity="0.3">
+          <circle cx="140" cy="40" r="8" fill="#F2B94C" />
+          <circle cx="140" cy="40" r="8" fill="#F2B94C" opacity="0.3">
             <animate
               attributeName="r"
               from="8"

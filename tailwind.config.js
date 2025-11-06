@@ -10,16 +10,16 @@ export default {
       colors: {
         brand: {
           primary: '#00CC6F',      // Main green - use for primary actions
-          secondary: '#002B36',    // Navy - use for headers and emphasis
-          accent: '#FFD166',       // Gold - use for highlights and CTAs
+          secondary: '#0F2931',    // Navy - use for headers and emphasis
+          accent: '#F2B94C',       // Gold - use for highlights and CTAs
           background: '#F8F9FA',   // Light gray - use for page backgrounds
           text: '#1C1C1C',         // Almost black - use for body text
         },
         // Alternative naming (st-* prefix for Showcase Transport)
         st: {
           green: '#00CC6F',        // Main green
-          navy: '#002B36',         // Navy
-          gold: '#FFD166',         // Gold
+          navy: '#0F2931',         // Navy
+          gold: '#F2B94C',         // Gold
           background: '#F8F9FA',   // Light gray
           text: '#1C1C1C',         // Almost black
         },

@@ -38,7 +38,7 @@
 
     font-weight: 600;
 
-    color: #002B36;
+    color: #0F2931;
 
   }
 
@@ -96,9 +96,9 @@
 
     padding: 1rem 2rem;
 
-    background-color: #FFD166;
+    background-color: #F2B94C;
 
-    color: #002B36;
+    color: #0F2931;
 
     font-family: 'Montserrat', sans-serif;
 
@@ -142,7 +142,7 @@
 
     outline: none;
 
-    box-shadow: 0 0 0 2px white, 0 0 0 4px #FFD166;
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #F2B94C;
 
   }
 
@@ -196,7 +196,7 @@
 
   .bg-brand-gradient {
 
-    background: linear-gradient(135deg, #00CC6F 0%, #002B36 100%);
+    background: linear-gradient(135deg, #00CC6F 0%, #0F2931 100%);
 
   }
 
@@ -206,7 +206,7 @@
 
   .text-brand-gradient {
 
-    background: linear-gradient(to right, #00CC6F, #002B36);
+    background: linear-gradient(to right, #00CC6F, #0F2931);
 
     -webkit-background-clip: text;
 
@@ -258,7 +258,7 @@ html {
 
 *:focus-visible {
 
-  outline: 2px solid #FFD166;
+  outline: 2px solid #F2B94C;
 
   outline-offset: 2px;
 

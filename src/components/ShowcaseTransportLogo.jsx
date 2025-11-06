@@ -50,10 +50,10 @@ export default function ShowcaseTransportLogo({ className = '', size = 'large' }
           opacity="0.6"
         />
         {/* Road lines */}
-        <line x1="80" y1="170" x2="85" y2="190" stroke="#FFD166" strokeWidth="2" opacity="0.8"/>
-        <line x1="110" y1="175" x2="115" y2="195" stroke="#FFD166" strokeWidth="2" opacity="0.8"/>
-        <line x1="140" y1="175" x2="145" y2="195" stroke="#FFD166" strokeWidth="2" opacity="0.8"/>
-        <line x1="170" y1="170" x2="175" y2="190" stroke="#FFD166" strokeWidth="2" opacity="0.8"/>
+        <line x1="80" y1="170" x2="85" y2="190" stroke="#F2B94C" strokeWidth="2" opacity="0.8"/>
+        <line x1="110" y1="175" x2="115" y2="195" stroke="#F2B94C" strokeWidth="2" opacity="0.8"/>
+        <line x1="140" y1="175" x2="145" y2="195" stroke="#F2B94C" strokeWidth="2" opacity="0.8"/>
+        <line x1="170" y1="170" x2="175" y2="190" stroke="#F2B94C" strokeWidth="2" opacity="0.8"/>
       </g>
 
       {/* Stylized truck silhouette */}
@@ -71,14 +71,14 @@ export default function ShowcaseTransportLogo({ className = '', size = 'large' }
         <polygon points="90,25 100,35 100,30 95,25" fill="#FFFFFF" opacity="0.4"/>
         
         {/* Wheels */}
-        <circle cx="15" cy="52" r="5" fill="#2a2a2a" stroke="#FFD166" strokeWidth="1.5"/>
-        <circle cx="15" cy="52" r="2.5" fill="#FFD166"/>
+        <circle cx="15" cy="52" r="5" fill="#2a2a2a" stroke="#F2B94C" strokeWidth="1.5"/>
+        <circle cx="15" cy="52" r="2.5" fill="#F2B94C"/>
         
-        <circle cx="55" cy="52" r="5" fill="#2a2a2a" stroke="#FFD166" strokeWidth="1.5"/>
-        <circle cx="55" cy="52" r="2.5" fill="#FFD166"/>
+        <circle cx="55" cy="52" r="5" fill="#2a2a2a" stroke="#F2B94C" strokeWidth="1.5"/>
+        <circle cx="55" cy="52" r="2.5" fill="#F2B94C"/>
         
-        <circle cx="85" cy="52" r="5" fill="#2a2a2a" stroke="#FFD166" strokeWidth="1.5"/>
-        <circle cx="85" cy="52" r="2.5" fill="#FFD166"/>
+        <circle cx="85" cy="52" r="5" fill="#2a2a2a" stroke="#F2B94C" strokeWidth="1.5"/>
+        <circle cx="85" cy="52" r="2.5" fill="#F2B94C"/>
 
         {/* Headlight detail */}
         <circle cx="98" cy="40" r="2" fill="#FFD700" opacity="0.8"/>

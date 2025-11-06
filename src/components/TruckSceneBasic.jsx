@@ -513,15 +513,15 @@ export default function TruckSceneBasic({ className = '', animate = false }) {
         <rect className="st-ground" y="150" width="800" height="50" fill="#3a3a3a" />
         
         {/* Yellow parking lines */}
-        <rect x="100" y="185" width="50" height="3" fill="#FFD166" opacity="0.7" />
-        <rect x="600" y="185" width="50" height="3" fill="#FFD166" opacity="0.7" />
+        <rect x="100" y="185" width="50" height="3" fill="#F2B94C" opacity="0.7" />
+        <rect x="600" y="185" width="50" height="3" fill="#F2B94C" opacity="0.7" />
         
         {/* Dock Building - STATIC */}
         <rect x="20" y="45" width="95" height="105" fill="#4a4a4a" />
         
         {/* Dock door with panels - ANIMATED */}
         <g className="st-dock-door">
-          <rect x="30" y="70" width="65" height="80" fill="#2a2a2a" stroke="#FFD166" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+          <rect x="30" y="70" width="65" height="80" fill="#2a2a2a" stroke="#F2B94C" strokeWidth="2" vectorEffect="non-scaling-stroke" />
           <line x1="30" y1="90" x2="95" y2="90" stroke="#3a3a3a" strokeWidth="2" />
           <line x1="30" y1="105" x2="95" y2="105" stroke="#3a3a3a" strokeWidth="2" />
           <line x1="30" y1="120" x2="95" y2="120" stroke="#3a3a3a" strokeWidth="2" />
@@ -532,11 +532,11 @@ export default function TruckSceneBasic({ className = '', animate = false }) {
         <rect x="100" y="55" width="12" height="12" fill="#87CEEB" stroke="#2a2a2a" strokeWidth="1" vectorEffect="non-scaling-stroke" />
         
         {/* Dock Number "3" */}
-        <text x="62" y="62" fontSize="32" fontWeight="bold" fill="#FFD166" fontFamily="Arial" textAnchor="middle">3</text>
+        <text x="62" y="62" fontSize="32" fontWeight="bold" fill="#F2B94C" fontFamily="Arial" textAnchor="middle">3</text>
         
         {/* Dock Sign */}
-        <rect x="90" y="40" width="22" height="10" fill="#2a2a2a" stroke="#FFD166" strokeWidth="1" rx="1" vectorEffect="non-scaling-stroke" />
-        <text x="101" y="47" fontSize="5" fontWeight="bold" fill="#FFD166" fontFamily="Arial" textAnchor="middle">DOCK 3</text>
+        <rect x="90" y="40" width="22" height="10" fill="#2a2a2a" stroke="#F2B94C" strokeWidth="1" rx="1" vectorEffect="non-scaling-stroke" />
+        <text x="101" y="47" fontSize="5" fontWeight="bold" fill="#F2B94C" fontFamily="Arial" textAnchor="middle">DOCK 3</text>
         
         {/* Dock light - ANIMATED COLOR CHANGE */}
         <circle className="st-dock-light" cx="101" cy="80" r="3" opacity="0.9" />
@@ -547,11 +547,11 @@ export default function TruckSceneBasic({ className = '', animate = false }) {
         {/* Dock bumpers - ANIMATED COMPRESSION */}
         <g className="st-dock-bumper" style={{ transformOrigin: '31px 147.5px' }}>
           <rect x="25" y="145" width="12" height="5" fill="#1a1a1a" />
-          <rect x="25" y="145" width="12" height="1" fill="#FFD166" />
+          <rect x="25" y="145" width="12" height="1" fill="#F2B94C" />
         </g>
         <g className="st-dock-bumper" style={{ transformOrigin: '101px 147.5px' }}>
           <rect x="95" y="145" width="12" height="5" fill="#1a1a1a" />
-          <rect x="95" y="145" width="12" height="1" fill="#FFD166" />
+          <rect x="95" y="145" width="12" height="1" fill="#F2B94C" />
         </g>
         
         {/* Dock Plate (loading bridge) - ANIMATED */}
@@ -569,7 +569,7 @@ export default function TruckSceneBasic({ className = '', animate = false }) {
         />
         
         {/* Safety bollard */}
-        <rect x="120" y="130" width="10" height="25" fill="#FFD166" />
+        <rect x="120" y="130" width="10" height="25" fill="#F2B94C" />
         <rect x="120" y="130" width="10" height="5" fill="#1a1a1a" />
         <rect x="120" y="140" width="10" height="5" fill="#1a1a1a" />
         <rect x="120" y="150" width="10" height="5" fill="#1a1a1a" />
@@ -598,10 +598,10 @@ export default function TruckSceneBasic({ className = '', animate = false }) {
         {/* TRAILER GROUP - Moves independently */}
         <g className="st-trailer-group">
           {/* Trailer body */}
-          <rect x="140" y="72" width="300" height="68" fill="#FFFFFF" stroke="#002B36" strokeWidth="2" rx="2" vectorEffect="non-scaling-stroke" />
+          <rect x="140" y="72" width="300" height="68" fill="#FFFFFF" stroke="#0F2931" strokeWidth="2" rx="2" vectorEffect="non-scaling-stroke" />
           
           {/* Reefer unit */}
-          <rect x="415" y="75" width="22" height="25" fill="#3a3a3a" stroke="#002B36" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+          <rect x="415" y="75" width="22" height="25" fill="#3a3a3a" stroke="#0F2931" strokeWidth="1" vectorEffect="non-scaling-stroke" />
           <rect x="418" y="79" width="5" height="5" fill="#4a90e2" opacity="0.6" />
           <rect x="425" y="79" width="5" height="5" fill="#4a90e2" opacity="0.6" />
           <circle cx="432" cy="81" r="1.5" fill="#00CC6F" opacity="0.8" />
@@ -620,11 +620,11 @@ export default function TruckSceneBasic({ className = '', animate = false }) {
           
           {/* SHOWCASE TRANSPORT text */}
           <text x="295" y="102" fontSize="14" fontWeight="600" fill="#00CC6F" fontFamily="Montserrat, Arial, sans-serif" textAnchor="middle" letterSpacing="0.5">SHOWCASE</text>
-          <text x="295" y="114" fontSize="9" fontWeight="600" fill="#002B36" fontFamily="Montserrat, Arial, sans-serif" textAnchor="middle" letterSpacing="0.5">TRANSPORT</text>
+          <text x="295" y="114" fontSize="9" fontWeight="600" fill="#0F2931" fontFamily="Montserrat, Arial, sans-serif" textAnchor="middle" letterSpacing="0.5">TRANSPORT</text>
           <text x="295" y="121" fontSize="4" fill="#666666" fontFamily="Arial" textAnchor="middle" letterSpacing="0.5">PRECISION • RELIABILITY • SAFETY</text>
           
           {/* Trailer chassis */}
-          <rect x="145" y="138" width="290" height="3" fill="#002B36" opacity="0.3" />
+          <rect x="145" y="138" width="290" height="3" fill="#0F2931" opacity="0.3" />
           
           {/* Landing gear - ANIMATED */}
           <g className="st-landing-gear">
@@ -689,33 +689,33 @@ export default function TruckSceneBasic({ className = '', animate = false }) {
           <rect x="445" y="145" width="3" height="5" fill="#3a3a3a" />
           
           {/* Main cab body */}
-          <rect x="448" y="80" width="82" height="70" fill="#00CC6F" stroke="#002B36" strokeWidth="2" rx="3" vectorEffect="non-scaling-stroke" />
+          <rect x="448" y="80" width="82" height="70" fill="#00CC6F" stroke="#0F2931" strokeWidth="2" rx="3" vectorEffect="non-scaling-stroke" />
           
           {/* Rear of cab panels */}
-          <rect x="450" y="95" width="12" height="35" fill="#00A854" stroke="#002B36" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+          <rect x="450" y="95" width="12" height="35" fill="#00A854" stroke="#0F2931" strokeWidth="1" vectorEffect="non-scaling-stroke" />
           
           {/* Side windows */}
-          <rect x="467" y="90" width="28" height="26" fill="#87CEEB" stroke="#002B36" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+          <rect x="467" y="90" width="28" height="26" fill="#87CEEB" stroke="#0F2931" strokeWidth="1" vectorEffect="non-scaling-stroke" />
           
           {/* Door line */}
-          <line x1="488" y1="116" x2="488" y2="150" stroke="#002B36" strokeWidth="1" opacity="0.4" />
+          <line x1="488" y1="116" x2="488" y2="150" stroke="#0F2931" strokeWidth="1" opacity="0.4" />
           
           {/* Door panel */}
-          <rect x="467" y="118" width="28" height="28" fill="#00A854" stroke="#002B36" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+          <rect x="467" y="118" width="28" height="28" fill="#00A854" stroke="#0F2931" strokeWidth="1" vectorEffect="non-scaling-stroke" />
           <circle cx="491" cy="132" r="1.5" fill="#1a1a1a" />
           
           {/* Windshield */}
-          <rect x="497" y="90" width="28" height="28" fill="#A8D5E2" stroke="#002B36" strokeWidth="1" opacity="0.7" vectorEffect="non-scaling-stroke" />
+          <rect x="497" y="90" width="28" height="28" fill="#A8D5E2" stroke="#0F2931" strokeWidth="1" opacity="0.7" vectorEffect="non-scaling-stroke" />
           
           {/* Front grille */}
-          <rect x="497" y="120" width="28" height="26" fill="#1a1a1a" stroke="#002B36" strokeWidth="1" />
+          <rect x="497" y="120" width="28" height="26" fill="#1a1a1a" stroke="#0F2931" strokeWidth="1" />
           <line x1="497" y1="125" x2="525" y2="125" stroke="#4a4a4a" strokeWidth="0.5" />
           <line x1="497" y1="130" x2="525" y2="130" stroke="#4a4a4a" strokeWidth="0.5" />
           <line x1="497" y1="135" x2="525" y2="135" stroke="#4a4a4a" strokeWidth="0.5" />
           <line x1="497" y1="140" x2="525" y2="140" stroke="#4a4a4a" strokeWidth="0.5" />
           
           {/* Front bumper */}
-          <rect x="525" y="120" width="5" height="26" fill="#3a3a3a" stroke="#002B36" strokeWidth="1" />
+          <rect x="525" y="120" width="5" height="26" fill="#3a3a3a" stroke="#0F2931" strokeWidth="1" />
           
           {/* Headlights - ANIMATED */}
           <circle className="st-headlight" cx="527" cy="105" r="3" fill="#FFD700" stroke="#1a1a1a" strokeWidth="0.5" />
@@ -738,14 +738,14 @@ export default function TruckSceneBasic({ className = '', animate = false }) {
           <rect x="486" y="70" width="9" height="3" fill="#4a4a4a" rx="1" />
           
           {/* Mirror */}
-          <rect x="469" y="98" width="6" height="9" fill="#2a2a2a" stroke="#002B36" strokeWidth="0.5" vectorEffect="non-scaling-stroke" />
+          <rect x="469" y="98" width="6" height="9" fill="#2a2a2a" stroke="#0F2931" strokeWidth="0.5" vectorEffect="non-scaling-stroke" />
           <line x1="463" y1="102" x2="469" y2="102" stroke="#2a2a2a" strokeWidth="1.5" />
           
           {/* Fuel tank under cab */}
-          <ellipse cx="478" cy="145" rx="20" ry="5" fill="#d4d4d4" stroke="#002B36" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+          <ellipse cx="478" cy="145" rx="20" ry="5" fill="#d4d4d4" stroke="#0F2931" strokeWidth="1" vectorEffect="non-scaling-stroke" />
           
           {/* Air tank */}
-          <ellipse cx="505" cy="145" rx="15" ry="5" fill="#DC143C" stroke="#002B36" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+          <ellipse cx="505" cy="145" rx="15" ry="5" fill="#DC143C" stroke="#0F2931" strokeWidth="1" vectorEffect="non-scaling-stroke" />
           
           {/* Truck wheels with rotation */}
           <g className="st-wheel" style={{ transformOrigin: '460px 150px' }}>

@@ -88,15 +88,79 @@ export default function Home() {
       {/* Services Section */}
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="card bg-gray-50 p-8 rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900">Palletized Freight</h3>
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0F2931] text-center mb-12">
+              Our Services
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="card p-6 text-center hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-semibold text-[#0F2931] mb-3">Dedicated Docking & Yard Moves</h3>
+                <p className="text-gray-600 text-sm">
+                  Precision backing and yard positioning for efficient dock operations.
+                </p>
+              </div>
+              <div className="card p-6 text-center hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-semibold text-[#0F2931] mb-3">Palletized Freight Transport</h3>
+                <p className="text-gray-600 text-sm">
+                  Secure handling and transport of palletized cargo with proper loading techniques.
+                </p>
+              </div>
+              <div className="card p-6 text-center hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-semibold text-[#0F2931] mb-3">Time-Sensitive / On-Time Delivery</h3>
+                <p className="text-gray-600 text-sm">
+                  Dependable scheduling and route planning to meet your critical deadlines.
+                </p>
+              </div>
+              <div className="card p-6 text-center hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-semibold text-[#0F2931] mb-3">Temperature-Controlled / Specialized Loads</h3>
+                <p className="text-gray-600 text-sm">
+                  Refrigerated and specialized freight handling to maintain product integrity.
+                </p>
+              </div>
             </div>
-            <div className="card bg-gray-50 p-8 rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900">Refrigerated Freight</h3>
-            </div>
-            <div className="card bg-gray-50 p-8 rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900">Drop & Hook Service</h3>
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0F2931] text-center mb-4">
+              Why Choose Showcase Transport
+            </h2>
+            <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+              Our commitment to excellence drives everything we do, from safety protocols to customer communication.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="card p-6 text-center hover:shadow-lg transition-shadow">
+                <div className="text-4xl mb-4">🛡️</div>
+                <h3 className="text-xl font-semibold text-[#0F2931] mb-3">Safety First</h3>
+                <p className="text-gray-600 text-sm">
+                  Rigorous safety standards, regular equipment inspections, and full DOT compliance on every run.
+                </p>
+              </div>
+              <div className="card p-6 text-center hover:shadow-lg transition-shadow">
+                <div className="text-4xl mb-4">⏰</div>
+                <h3 className="text-xl font-semibold text-[#0F2931] mb-3">Reliable Scheduling</h3>
+                <p className="text-gray-600 text-sm">
+                  Strategic route planning and proactive monitoring to ensure your freight arrives on time, every time.
+                </p>
+              </div>
+              <div className="card p-6 text-center hover:shadow-lg transition-shadow">
+                <div className="text-4xl mb-4">👨‍✈️</div>
+                <h3 className="text-xl font-semibold text-[#0F2931] mb-3">Professional Drivers</h3>
+                <p className="text-gray-600 text-sm">
+                  Experienced, safety-minded drivers with the expertise to handle precision docking and freight handling.
+                </p>
+              </div>
+              <div className="card p-6 text-center hover:shadow-lg transition-shadow">
+                <div className="text-4xl mb-4">📞</div>
+                <h3 className="text-xl font-semibold text-[#0F2931] mb-3">Exceptional Communication</h3>
+                <p className="text-gray-600 text-sm">
+                  Proactive updates, responsive support, and clear communication throughout your shipment's journey.
+                </p>
+              </div>
             </div>
           </div>
         </div>
