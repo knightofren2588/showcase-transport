@@ -213,3 +213,4 @@ caches.keys().then(keys => {
 **Issue:** Offline mode not working
 - **Fix:** Check service worker cache strategy, verify files are cached
 
+

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Generator - Showcase Transport</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .icon-container {
+            position: relative;
+            width: 512px;
+            height: 512px;
+            background: #1a2332;
+            border-radius: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .icon-container[data-size] {
+            margin: 20px;
+        }
+        
+        .green-circle {
+            width: 320px;
+            height: 320px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(16, 185, 129, 0.4);
+        }
+        
+        .st-text {
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            font-size: 140px;
+            color: white;
+            letter-spacing: -8px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .blue-dot {
+            position: absolute;
+            top: 60px;
+            right: 60px;
+            width: 48px;
+            height: 48px;
+            background: radial-gradient(circle, #60a5fa 0%, #3b82f6 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(96, 165, 250, 0.6), 0 0 40px rgba(59, 130, 246, 0.4);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.1);
+            }
+        }
+        
+        .size-label {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #666;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 512x512 (largest) -->
+    <div style="position: relative;">
+        <div class="icon-container" data-size="512">
+            <div class="green-circle">
+                <div class="st-text">ST</div>
+            </div>
+            <div class="blue-dot"></div>
+        </div>
+        <div class="size-label">512x512</div>
+    </div>
+    
+    <!-- 384x384 -->
+    <div style="position: relative;">
+        <div class="icon-container" data-size="384" style="width: 384px; height: 384px;">
+            <div class="green-circle" style="width: 240px; height: 240px;">
+                <div class="st-text" style="font-size: 105px;">ST</div>
+            </div>
+            <div class="blue-dot" style="width: 36px; height: 36px; top: 45px; right: 45px;"></div>
+        </div>
+        <div class="size-label">384x384</div>
+    </div>
+    
+    <!-- 192x192 -->
+    <div style="position: relative;">
+        <div class="icon-container" data-size="192" style="width: 192px; height: 192px;">
+            <div class="green-circle" style="width: 120px; height: 120px;">
+                <div class="st-text" style="font-size: 52px;">ST</div>
+            </div>
+            <div class="blue-dot" style="width: 18px; height: 18px; top: 22px; right: 22px;"></div>
+        </div>
+        <div class="size-label">192x192</div>
+    </div>
+    
+    <!-- 152x152 -->
+    <div style="position: relative;">
+        <div class="icon-container" data-size="152" style="width: 152px; height: 152px;">
+            <div class="green-circle" style="width: 95px; height: 95px;">
+                <div class="st-text" style="font-size: 41px;">ST</div>
+            </div>
+            <div class="blue-dot" style="width: 14px; height: 14px; top: 18px; right: 18px;"></div>
+        </div>
+        <div class="size-label">152x152</div>
+    </div>
+    
+    <!-- 144x144 -->
+    <div style="position: relative;">
+        <div class="icon-container" data-size="144" style="width: 144px; height: 144px;">
+            <div class="green-circle" style="width: 90px; height: 90px;">
+                <div class="st-text" style="font-size: 39px;">ST</div>
+            </div>
+            <div class="blue-dot" style="width: 13px; height: 13px; top: 17px; right: 17px;"></div>
+        </div>
+        <div class="size-label">144x144</div>
+    </div>
+    
+    <!-- 128x128 -->
+    <div style="position: relative;">
+        <div class="icon-container" data-size="128" style="width: 128px; height: 128px;">
+            <div class="green-circle" style="width: 80px; height: 80px;">
+                <div class="st-text" style="font-size: 35px;">ST</div>
+            </div>
+            <div class="blue-dot" style="width: 12px; height: 12px; top: 15px; right: 15px;"></div>
+        </div>
+        <div class="size-label">128x128</div>
+    </div>
+    
+    <!-- 96x96 -->
+    <div style="position: relative;">
+        <div class="icon-container" data-size="96" style="width: 96px; height: 96px;">
+            <div class="green-circle" style="width: 60px; height: 60px;">
+                <div class="st-text" style="font-size: 26px;">ST</div>
+            </div>
+            <div class="blue-dot" style="width: 9px; height: 9px; top: 11px; right: 11px;"></div>
+        </div>
+        <div class="size-label">96x96</div>
+    </div>
+    
+    <!-- 72x72 -->
+    <div style="position: relative;">
+        <div class="icon-container" data-size="72" style="width: 72px; height: 72px;">
+            <div class="green-circle" style="width: 45px; height: 45px;">
+                <div class="st-text" style="font-size: 20px;">ST</div>
+            </div>
+            <div class="blue-dot" style="width: 7px; height: 7px; top: 8px; right: 8px;"></div>
+        </div>
+        <div class="size-label">72x72</div>
+    </div>
+    
+    <script>
+        // Instructions
+        console.log('To generate PNG files:');
+        console.log('1. Open this file in a browser');
+        console.log('2. Use browser DevTools or a screenshot tool to capture each icon');
+        console.log('3. Or use an online tool like html2canvas to convert');
+        console.log('4. Save each icon with the corresponding filename (e.g., icon-512x512.png)');
+    </script>
+</body>
+</html>
+
