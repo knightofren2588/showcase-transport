@@ -26,7 +26,7 @@ export default function VersionBadge() {
             <div className="bg-gradient-to-r from-gray-800 to-gray-900 px-6 py-4 border-b border-gray-700 flex items-center justify-between">
               <div>
                 <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-                  🏆 Release Notes
+                  🎉 What's New
                 </h2>
                 <p className="text-sm text-gray-400 mt-1">Showcase Transport Website</p>
               </div>
@@ -44,150 +44,60 @@ export default function VersionBadge() {
             {/* Modal Content */}
             <div className="px-6 py-6 overflow-y-auto max-h-[calc(90vh-100px)] custom-scrollbar">
               
-              {/* Version 1.0.1 - PWA Update */}
+              {/* Version 1.0.1 - November 2025 Update */}
               <div className="mb-8">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="px-3 py-1 bg-green-600 text-white text-sm font-bold rounded-full">
                     v1.0.1
                   </span>
                   <span className="px-3 py-1 bg-purple-600 text-white text-xs font-semibold rounded-full">
-                    PWA UPDATE
+                    LATEST UPDATE
                   </span>
                   <span className="text-gray-400 text-sm">November 2025</span>
                 </div>
 
-                {/* PWA Features */}
+                {/* Install as App */}
                 <div className="mb-6">
                   <h3 className="text-xl font-bold text-purple-400 mb-3 flex items-center gap-2">
-                    📱 Progressive Web App Implementation
+                    📱 Install Our Website as an App
                   </h3>
                   <div className="space-y-2 text-gray-300">
                     <div className="flex items-start gap-2">
                       <span className="text-purple-400 mt-1">▹</span>
-                      <span>Full PWA support - users can now install the website as an app on any device</span>
+                      <span>You can now install our website on your phone or computer - no app store needed!</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="text-purple-400 mt-1">▹</span>
-                      <span>Service worker implementation for offline functionality and caching</span>
+                      <span>Add to your home screen for quick, one-tap access</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="text-purple-400 mt-1">▹</span>
-                      <span>Web app manifest with complete metadata for installation</span>
+                      <span>Works like a native app - launches in full screen without browser bars</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="text-purple-400 mt-1">▹</span>
-                      <span>Custom app icons in 8 sizes (72px to 512px) with professional design</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-purple-400 mt-1">▹</span>
-                      <span>Add to home screen functionality for iPhone, Android, and Desktop</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-purple-400 mt-1">▹</span>
-                      <span>Standalone app mode - launches without browser chrome</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-purple-400 mt-1">▹</span>
-                      <span>Intelligent caching for faster load times and offline access</span>
+                      <span>View pages even when you're offline</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Technical Enhancements */}
+                {/* Faster & Better */}
                 <div className="mb-6">
                   <h3 className="text-xl font-bold text-cyan-400 mb-3 flex items-center gap-2">
-                    🛠️ Technical Enhancements
+                    ⚡ Faster & More Reliable
                   </h3>
                   <div className="space-y-2 text-gray-300">
                     <div className="flex items-start gap-2">
                       <span className="text-cyan-400 mt-1">▹</span>
-                      <span>Service Worker (sw.js) - Handles caching and offline functionality</span>
+                      <span>Pages load faster with smart caching technology</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="text-cyan-400 mt-1">▹</span>
-                      <span>App Manifest (manifest.json) - Configures app behavior and appearance</span>
+                      <span>Improved reliability - works even with slow internet</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="text-cyan-400 mt-1">▹</span>
-                      <span>Updated HTML meta tags for PWA compatibility</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-cyan-400 mt-1">▹</span>
-                      <span>Apple Touch Icons for iOS home screen integration</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-cyan-400 mt-1">▹</span>
-                      <span>Theme color configuration matching brand identity</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* User Benefits */}
-                <div className="mb-6">
-                  <h3 className="text-xl font-bold text-yellow-400 mb-3 flex items-center gap-2">
-                    ✨ User Benefits
-                  </h3>
-                  <div className="space-y-2 text-gray-300">
-                    <div className="flex items-start gap-2">
-                      <span className="text-yellow-400 mt-1">▹</span>
-                      <span>Install website as native app on home screen (no app store needed)</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-yellow-400 mt-1">▹</span>
-                      <span>Faster loading with intelligent caching system</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-yellow-400 mt-1">▹</span>
-                      <span>Works offline - view cached pages without internet</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-yellow-400 mt-1">▹</span>
-                      <span>App-like experience with full-screen mode</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-yellow-400 mt-1">▹</span>
-                      <span>No browser bars - clean, professional interface</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-yellow-400 mt-1">▹</span>
-                      <span>Automatic updates when new version deployed</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Icon Design */}
-                <div className="mb-6">
-                  <h3 className="text-xl font-bold text-pink-400 mb-3 flex items-center gap-2">
-                    🎨 Professional App Icons
-                  </h3>
-                  <div className="space-y-2 text-gray-300">
-                    <div className="flex items-start gap-2">
-                      <span className="text-pink-400 mt-1">▹</span>
-                      <span>8 icon sizes covering all device requirements (72px - 512px)</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-pink-400 mt-1">▹</span>
-                      <span>Dark navy background matching website header design</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-pink-400 mt-1">▹</span>
-                      <span>Glowing green border ring with professional edge effect</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-pink-400 mt-1">▹</span>
-                      <span>Central green badge with radial gradient for depth</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-pink-400 mt-1">▹</span>
-                      <span>3D shadows and highlights for realistic appearance</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-pink-400 mt-1">▹</span>
-                      <span>Animated pulse indicator with glow effect</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-pink-400 mt-1">▹</span>
-                      <span>Decorative road lines reinforcing logistics theme</span>
+                      <span>Automatic updates when new features are added</span>
                     </div>
                   </div>
                 </div>
@@ -206,130 +116,66 @@ export default function VersionBadge() {
                   <span className="text-gray-400 text-sm">November 2025</span>
                 </div>
 
-                {/* Core Features */}
+                {/* Website Features */}
                 <div className="mb-6">
                   <h3 className="text-xl font-bold text-green-400 mb-3 flex items-center gap-2">
-                    🚀 Core Features
+                    🚀 Website Features
                   </h3>
                   <div className="space-y-2 text-gray-300">
                     <div className="flex items-start gap-2">
                       <span className="text-green-400 mt-1">▹</span>
-                      <span>Custom animated truck docking scene with smooth transitions</span>
+                      <span>Custom animated truck docking scene on the homepage</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="text-green-400 mt-1">▹</span>
-                      <span>Professional brand identity with ST logo and color scheme</span>
+                      <span>Professional brand design with custom logo and colors</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="text-green-400 mt-1">▹</span>
-                      <span>Complete 5-page structure (Home, About, Services, Values, Contact)</span>
+                      <span>Easy quote request form - get pricing fast</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="text-green-400 mt-1">▹</span>
-                      <span>Fully responsive design - perfect on mobile, tablet, and desktop</span>
+                      <span>Complete information about our services and values</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="text-green-400 mt-1">▹</span>
-                      <span>Contact form with Netlify integration for instant submissions</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-green-400 mt-1">▹</span>
-                      <span>Sticky header navigation with smooth scroll behavior</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-green-400 mt-1">▹</span>
-                      <span>Custom "Get a Quote" call-to-action buttons throughout site</span>
+                      <span>Works perfectly on phones, tablets, and computers</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Performance Metrics */}
+                {/* Performance */}
                 <div className="mb-6">
                   <h3 className="text-xl font-bold text-purple-400 mb-3 flex items-center gap-2">
-                    ⚡ Performance Optimization
+                    ⚡ Lightning Fast Performance
                   </h3>
                   <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-                    <p className="text-green-300 font-bold mb-3">Google Lighthouse Score: 96.25/100 (Top 5% of all websites!)</p>
-                    <div className="grid grid-cols-2 gap-3 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-gray-400">Performance:</span>
-                        <span className="text-green-400 font-bold">100/100 🏆</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-400">Accessibility:</span>
-                        <span className="text-green-400 font-bold">95/100 ⭐</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-400">Best Practices:</span>
-                        <span className="text-green-400 font-bold">100/100 🏆</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-400">SEO:</span>
-                        <span className="text-green-400 font-bold">90/100 ⭐</span>
-                      </div>
-                    </div>
+                    <p className="text-green-300 font-bold mb-3">Top 5% Performance Rating</p>
+                    <p className="text-gray-300 text-sm">
+                      Our website loads in under 1 second and scores 96.25/100 on Google's performance tests!
+                    </p>
                   </div>
                   <div className="space-y-2 text-gray-300 mt-3">
                     <div className="flex items-start gap-2">
                       <span className="text-purple-400 mt-1">▹</span>
-                      <span>Lightning-fast load times - under 1 second first contentful paint</span>
+                      <span>Instant page loads - no waiting around</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="text-purple-400 mt-1">▹</span>
-                      <span>Fixed color contrast issues for perfect accessibility compliance</span>
+                      <span>Optimized for accessibility - easy for everyone to use</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="text-purple-400 mt-1">▹</span>
-                      <span>Optimized button styling with proper hover states</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-purple-400 mt-1">▹</span>
-                      <span>Validated SEO structure with proper meta tags and semantic HTML</span>
+                      <span>Secure connection (HTTPS) protects your information</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Tech Stack */}
-                <div className="mb-6">
-                  <h3 className="text-xl font-bold text-blue-400 mb-3 flex items-center gap-2">
-                    💻 Tech Stack
-                  </h3>
-                  <div className="space-y-2 text-gray-300">
-                    <div className="flex items-start gap-2">
-                      <span className="text-blue-400 mt-1">▹</span>
-                      <span>React 18 - Modern component-based architecture</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-blue-400 mt-1">▹</span>
-                      <span>Vite - Lightning-fast build tool and dev server</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-blue-400 mt-1">▹</span>
-                      <span>React Router - Smooth client-side navigation</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-blue-400 mt-1">▹</span>
-                      <span>Tailwind CSS - Modern utility-first styling</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-blue-400 mt-1">▹</span>
-                      <span>Custom SVG animations - Hand-coded truck docking scene</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-blue-400 mt-1">▹</span>
-                      <span>Netlify hosting - Enterprise-grade CDN and form handling</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-blue-400 mt-1">▹</span>
-                      <span>GitHub version control - Full project history and backup</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Deployment */}
+                {/* Domain & Security */}
                 <div className="mb-6">
                   <h3 className="text-xl font-bold text-yellow-400 mb-3 flex items-center gap-2">
-                    🚢 Deployment & Infrastructure
+                    🔒 Professional & Secure
                   </h3>
                   <div className="space-y-2 text-gray-300">
                     <div className="flex items-start gap-2">
@@ -338,73 +184,15 @@ export default function VersionBadge() {
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="text-yellow-400 mt-1">▹</span>
-                      <span>SSL certificate (HTTPS) - Secure connections for all visitors</span>
+                      <span>Secure HTTPS encryption for all visitors</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="text-yellow-400 mt-1">▹</span>
-                      <span>Global CDN - Fast loading worldwide</span>
+                      <span>Fast loading from anywhere in the world</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="text-yellow-400 mt-1">▹</span>
-                      <span>Automatic deployments from GitHub - Push to deploy</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-yellow-400 mt-1">▹</span>
-                      <span>Form submission handling - Contact forms work instantly</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Client Documentation */}
-                <div className="mb-6">
-                  <h3 className="text-xl font-bold text-pink-400 mb-3 flex items-center gap-2">
-                    📄 Professional Documentation Created
-                  </h3>
-                  <div className="space-y-2 text-gray-300">
-                    <div className="flex items-start gap-2">
-                      <span className="text-pink-400 mt-1">▹</span>
-                      <span><strong>Performance Report</strong> - Detailed Lighthouse audit results</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-pink-400 mt-1">▹</span>
-                      <span><strong>Client Handoff Document</strong> - Complete access details and support info</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-pink-400 mt-1">▹</span>
-                      <span><strong>Maintenance Pricing Proposal</strong> - Pay-as-you-go at $25/hour</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-pink-400 mt-1">▹</span>
-                      <span><strong>Web Maintenance Agreement</strong> - Professional service contract</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-pink-400 mt-1">▹</span>
-                      <span><strong>90-Day Warranty</strong> - Free bug fixes and support included</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Developer Features */}
-                <div className="mb-6">
-                  <h3 className="text-xl font-bold text-cyan-400 mb-3 flex items-center gap-2">
-                    🛠️ Developer Experience
-                  </h3>
-                  <div className="space-y-2 text-gray-300">
-                    <div className="flex items-start gap-2">
-                      <span className="text-cyan-400 mt-1">▹</span>
-                      <span>Version badge system with release notes (this modal!)</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-cyan-400 mt-1">▹</span>
-                      <span>Clean, maintainable code structure</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-cyan-400 mt-1">▹</span>
-                      <span>Reusable component architecture</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-cyan-400 mt-1">▹</span>
-                      <span>Professional Git workflow with clear commit history</span>
+                      <span>Contact forms work instantly - we respond within 24 hours</span>
                     </div>
                   </div>
                 </div>
@@ -415,13 +203,10 @@ export default function VersionBadge() {
               <div className="border-t border-gray-700 pt-6 mt-6">
                 <div className="text-center">
                   <p className="text-gray-400 text-sm mb-2">
-                    Built with 💚 by <span className="text-green-400 font-semibold">StarktechStudios</span>
+                    Built by <span className="text-green-400 font-semibold">StarktechStudios</span>
                   </p>
                   <p className="text-gray-500 text-xs">
-                    Chillicothe, Ohio • Project Launch: November 2025
-                  </p>
-                  <p className="text-gray-500 text-xs mt-2">
-                    463 Church Street, Chillicothe, OH 45601 • mike@starktechstudios.com
+                    Chillicothe, Ohio
                   </p>
                   <p className="text-gray-500 text-xs mt-3">
                     Current Version: v1.0.1 • Last Updated: November 2025
