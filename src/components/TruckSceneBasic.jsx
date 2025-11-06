@@ -532,7 +532,7 @@ export default function TruckSceneBasic({ className = '', animate = false }) {
         <rect x="100" y="55" width="12" height="12" fill="#87CEEB" stroke="#2a2a2a" strokeWidth="1" vectorEffect="non-scaling-stroke" />
         
         {/* Dock Number "3" */}
-        <text x="62" y="62" fontSize="32" fontWeight="bold" fill="#F2B94C" fontFamily="Arial" textAnchor="middle">3</text>
+        <text x="62" y="62" fontSize="18" fontWeight="bold" fill="#F2B94C" fontFamily="Arial" textAnchor="middle">3</text>
         
         {/* Dock Sign */}
         <rect x="90" y="40" width="22" height="10" fill="#2a2a2a" stroke="#F2B94C" strokeWidth="1" rx="1" vectorEffect="non-scaling-stroke" />
