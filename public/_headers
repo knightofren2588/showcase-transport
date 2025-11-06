@@ -1,12 +1,14 @@
 # Security Headers for Showcase Transport LLC
 
-# Place this file at: public/_headers
+# Updated to ensure JotForm works properly
+
+
 
 /*
 
-  # Content Security Policy (CSP) - Prevents XSS and injection attacks
+  # Content Security Policy (CSP) - Relaxed for JotForm compatibility
 
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jotfor.ms https://form.jotform.com; style-src 'self' 'unsafe-inline' https://cdn.jotfor.ms https://form.jotform.com; img-src 'self' data: https: blob:; font-src 'self' data: https://cdn.jotfor.ms; connect-src 'self' https://form.jotform.com https://cdn.jotform.com; frame-src https://form.jotform.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://form.jotform.com; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self' https://form.jotform.com https://cdn.jotfor.ms https://*.jotform.com https://*.jotfor.ms; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://form.jotform.com https://cdn.jotfor.ms https://*.jotform.com https://*.jotfor.ms; style-src 'self' 'unsafe-inline' https://form.jotform.com https://cdn.jotfor.ms https://*.jotform.com https://*.jotfor.ms; img-src 'self' data: https: blob:; font-src 'self' data: https://cdn.jotfor.ms https://*.jotfor.ms; connect-src 'self' https://form.jotform.com https://cdn.jotfor.ms https://*.jotform.com https://*.jotfor.ms; frame-src https://form.jotform.com https://*.jotform.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://form.jotform.com https://*.jotform.com; upgrade-insecure-requests
 
   
 
@@ -52,7 +54,7 @@
 
 
 
-# Static Assets - Aggressive caching with versioning
+# Static Assets - Aggressive caching
 
 /assets/*
 
@@ -64,33 +66,9 @@
 
   Cache-Control: public, max-age=31536000, immutable
 
-  
-
-/*.png
-
-  Cache-Control: public, max-age=31536000, immutable
-
-  
-
-/*.jpg
-
-  Cache-Control: public, max-age=31536000, immutable
-
-  
-
-/*.svg
-
-  Cache-Control: public, max-age=31536000, immutable
-
-  
-
-/*.webp
-
-  Cache-Control: public, max-age=31536000, immutable
 
 
-
-# Service Worker - No cache, always fresh
+# Service Worker - No cache
 
 /sw.js
 
@@ -100,25 +78,10 @@
 
 
 
-# Manifest - Short cache
+# Manifest
 
 /manifest.json
 
   Cache-Control: public, max-age=3600
 
   Content-Type: application/manifest+json
-
-
-
-# Fonts - Long cache
-
-/*.woff2
-
-  Cache-Control: public, max-age=31536000, immutable
-
-  
-
-/*.woff
-
-  Cache-Control: public, max-age=31536000, immutable
-
