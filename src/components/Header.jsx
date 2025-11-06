@@ -29,8 +29,9 @@ export default function Header() {
                 </div>
                 <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
               </div>
-              <div className="hidden sm:block">
-                <div className="text-white font-bold text-lg">Showcase Transport</div>
+              {/* Company Name - Now visible on all screen sizes */}
+              <div>
+                <div className="text-white font-bold text-base sm:text-lg">Showcase Transport</div>
                 <div className="text-green-400 text-xs -mt-1">Premium Logistics</div>
               </div>
             </Link>
