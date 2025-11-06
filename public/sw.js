@@ -1,4 +1,4 @@
-// Optimized Service Worker for Showcase Transport PWA
+// Secure Service Worker for Showcase Transport PWA
 // Version 1.0.1
 
 const CACHE_NAME = 'showcase-transport-v1.0.1';
@@ -13,14 +13,15 @@ const urlsToCache = [
 
 // Install Service Worker and cache critical resources
 self.addEventListener('install', (event) => {
-  console.log('Service Worker installing...');
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
-        console.log('Caching critical resources');
         return cache.addAll(urlsToCache);
       })
-      .then(() => self.skipWaiting()) // Activate immediately
+      .then(() => self.skipWaiting())
+      .catch((error) => {
+        // Silent error handling - no console logs in production
+      })
   );
 });
 
@@ -34,8 +35,14 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Skip cross-origin requests
-  if (url.origin !== location.origin) {
+  // Skip cross-origin requests (except JotForm)
+  if (url.origin !== location.origin && !url.origin.includes('jotform.com') && !url.origin.includes('jotfor.ms')) {
+    return;
+  }
+
+  // Don't cache JotForm requests - always fetch fresh
+  if (url.origin.includes('jotform.com') || url.origin.includes('jotfor.ms')) {
+    event.respondWith(fetch(request));
     return;
   }
 
@@ -53,8 +60,8 @@ self.addEventListener('fetch', (event) => {
           
           // Not in cache, fetch from network
           return fetch(request).then((response) => {
-            // Cache successful responses
-            if (response && response.status === 200) {
+            // Only cache valid responses
+            if (response && response.status === 200 && response.type === 'basic') {
               const responseToCache = response.clone();
               caches.open(RUNTIME_CACHE).then((cache) => {
                 cache.put(request, responseToCache);
@@ -64,10 +71,11 @@ self.addEventListener('fetch', (event) => {
           });
         })
         .catch(() => {
-          // Offline fallback for images
-          if (request.url.match(/\.(png|jpg|jpeg|gif|svg|webp)$/)) {
-            return caches.match('/offline-image.svg');
-          }
+          // Offline fallback - return empty response
+          return new Response('Offline', {
+            status: 503,
+            statusText: 'Service Unavailable'
+          });
         })
     );
   } 
@@ -76,8 +84,8 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       fetch(request)
         .then((response) => {
-          // Cache the fetched page for offline use
-          if (response && response.status === 200) {
+          // Cache successful HTML responses for offline use
+          if (response && response.status === 200 && response.type === 'basic') {
             const responseToCache = response.clone();
             caches.open(RUNTIME_CACHE).then((cache) => {
               cache.put(request, responseToCache);
@@ -91,7 +99,7 @@ self.addEventListener('fetch', (event) => {
             if (cachedResponse) {
               return cachedResponse;
             }
-            // Offline page fallback
+            // Fallback to index.html
             return caches.match('/index.html');
           });
         })
@@ -101,8 +109,6 @@ self.addEventListener('fetch', (event) => {
 
 // Activate Service Worker and clean up old caches
 self.addEventListener('activate', (event) => {
-  console.log('Service Worker activating...');
-  
   const currentCaches = [CACHE_NAME, RUNTIME_CACHE];
   
   event.waitUntil(
@@ -110,30 +116,19 @@ self.addEventListener('activate', (event) => {
       return Promise.all(
         cacheNames.map((cacheName) => {
           if (!currentCaches.includes(cacheName)) {
-            console.log('Deleting old cache:', cacheName);
             return caches.delete(cacheName);
           }
         })
       );
     })
     .then(() => {
-      console.log('Service Worker activated');
-      return self.clients.claim(); // Take control of all pages immediately
+      return self.clients.claim();
+    })
+    .catch((error) => {
+      // Silent error handling
     })
   );
 });
-
-// Background sync for offline form submissions (future enhancement)
-self.addEventListener('sync', (event) => {
-  if (event.tag === 'sync-forms') {
-    event.waitUntil(syncForms());
-  }
-});
-
-async function syncForms() {
-  // Future: Handle offline form submissions
-  console.log('Syncing offline forms...');
-}
 
 // Handle service worker updates
 self.addEventListener('message', (event) => {

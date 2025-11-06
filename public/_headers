@@ -1,0 +1,124 @@
+# Security Headers for Showcase Transport LLC
+
+# Place this file at: public/_headers
+
+/*
+
+  # Content Security Policy (CSP) - Prevents XSS and injection attacks
+
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jotfor.ms https://form.jotform.com; style-src 'self' 'unsafe-inline' https://cdn.jotfor.ms https://form.jotform.com; img-src 'self' data: https: blob:; font-src 'self' data: https://cdn.jotfor.ms; connect-src 'self' https://form.jotform.com https://cdn.jotform.com; frame-src https://form.jotform.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://form.jotform.com; upgrade-insecure-requests
+
+  
+
+  # Strict Transport Security (HSTS) - Force HTTPS for 1 year
+
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+  
+
+  # Prevent clickjacking attacks
+
+  X-Frame-Options: DENY
+
+  
+
+  # Prevent MIME type sniffing
+
+  X-Content-Type-Options: nosniff
+
+  
+
+  # XSS Protection (legacy browsers)
+
+  X-XSS-Protection: 1; mode=block
+
+  
+
+  # Referrer Policy - Limit information leak
+
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  
+
+  # Permissions Policy - Restrict browser features
+
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()
+
+  
+
+  # Cache Control for HTML
+
+  Cache-Control: public, max-age=0, must-revalidate
+
+
+
+# Static Assets - Aggressive caching with versioning
+
+/assets/*
+
+  Cache-Control: public, max-age=31536000, immutable
+
+  
+
+/icons/*
+
+  Cache-Control: public, max-age=31536000, immutable
+
+  
+
+/*.png
+
+  Cache-Control: public, max-age=31536000, immutable
+
+  
+
+/*.jpg
+
+  Cache-Control: public, max-age=31536000, immutable
+
+  
+
+/*.svg
+
+  Cache-Control: public, max-age=31536000, immutable
+
+  
+
+/*.webp
+
+  Cache-Control: public, max-age=31536000, immutable
+
+
+
+# Service Worker - No cache, always fresh
+
+/sw.js
+
+  Cache-Control: no-cache, no-store, must-revalidate
+
+  Content-Type: application/javascript
+
+
+
+# Manifest - Short cache
+
+/manifest.json
+
+  Cache-Control: public, max-age=3600
+
+  Content-Type: application/manifest+json
+
+
+
+# Fonts - Long cache
+
+/*.woff2
+
+  Cache-Control: public, max-age=31536000, immutable
+
+  
+
+/*.woff
+
+  Cache-Control: public, max-age=31536000, immutable
+

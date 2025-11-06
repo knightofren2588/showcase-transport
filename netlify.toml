@@ -1,11 +1,39 @@
 [build]
   command = "npm run build"
   publish = "dist"
-  functions = "netlify/functions"
 
+# Security Headers (backup if _headers file doesn't work)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+# Force HTTPS redirect
+[[redirects]]
+  from = "http://showcasetransportllc.com/*"
+  to = "https://showcasetransportllc.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.showcasetransportllc.com/*"
+  to = "https://showcasetransportllc.com/:splat"
+  status = 301
+  force = true
+
+# Redirect www to non-www (optional - keep if you want this)
+[[redirects]]
+  from = "https://www.showcasetransportllc.com/*"
+  to = "https://showcasetransportllc.com/:splat"
+  status = 301
+  force = true
+
+# SPA redirect - must be last
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-
