@@ -122,5 +122,5 @@ MIT
 
 ## Contact
 
-For questions or support, please contact info@showcasetransport.com
+For questions or support, please contact mmg@showcasetransport.com or mag@showcasetransport.com
 

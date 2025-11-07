@@ -58,10 +58,10 @@ const Footer = () => {
               <ul className="space-y-3">
                 <li>
                   <a 
-                    href="mailto:info@showcasetransport.com"
+                    href="mailto:mmg@showcasetransport.com,mag@showcasetransport.com"
                     className="text-gray-300 hover:text-[#F2B94C] transition-colors"
                   >
-                    Email: info@showcasetransport.com
+                    Email: mmg@showcasetransport.com &amp; mag@showcasetransport.com
                   </a>
                 </li>
                 <li>

@@ -2,7 +2,7 @@
 
 export const SITE = {
   name: "Showcase Transport",
-  email: "info@showcasetransport.com",
+  email: "mmg@showcasetransport.com, mag@showcasetransport.com",
   phone: "TODO-UPDATE-PHONE",
   tagline: "Safe, On-Time Freight — Every Trip."
 };

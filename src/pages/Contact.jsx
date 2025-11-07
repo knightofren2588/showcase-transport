@@ -57,10 +57,10 @@ export default function Contact() {
       <div className="text-center text-sm text-st-navy/60">
         Or email us directly at{" "}
         <a
-          href="mailto:mike@starktechstudios.com"
+          href="mailto:mmg@showcasetransport.com,mag@showcasetransport.com"
           className="text-st-green hover:underline font-semibold"
         >
-          mike@starktechstudios.com
+          mmg@showcasetransport.com &amp; mag@showcasetransport.com
         </a>
       </div>
     </section>
