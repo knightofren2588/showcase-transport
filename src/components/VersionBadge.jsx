@@ -15,7 +15,7 @@ export default function VersionBadge() {
         title="View Release Notes"
       >
         <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
-        <span className="text-xs font-bold text-white">v1.0.1</span>
+        <span className="text-xs font-bold text-white">v1.2.0</span>
       </button>
 
       {/* Release Notes Modal */}
@@ -44,14 +44,122 @@ export default function VersionBadge() {
             {/* Modal Content */}
             <div className="px-6 py-6 overflow-y-auto max-h-[calc(90vh-100px)] custom-scrollbar">
               
-              {/* Version 1.0.1 - November 2025 Update */}
+              {/* Version 1.2.0 - November 7, 2025 Update */}
               <div className="mb-8">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="px-3 py-1 bg-green-600 text-white text-sm font-bold rounded-full">
-                    v1.0.1
+                    v1.2.0
                   </span>
                   <span className="px-3 py-1 bg-purple-600 text-white text-xs font-semibold rounded-full">
                     LATEST UPDATE
+                  </span>
+                  <span className="text-gray-400 text-sm">November 7, 2025</span>
+                </div>
+
+                {/* New Equipment Showcase */}
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold text-green-400 mb-3 flex items-center gap-2">
+                    🚛 See Our Professional Fleet
+                  </h3>
+                  <div className="space-y-2 text-gray-300">
+                    <div className="flex items-start gap-2">
+                      <span className="text-green-400 mt-1">▹</span>
+                      <span>New "Our Equipment" section featuring our professional trucks</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-green-400 mt-1">▹</span>
+                      <span>Interactive photo with smooth zoom effect when you hover</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-green-400 mt-1">▹</span>
+                      <span>Visual badges showing our key capabilities at a glance</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Enhanced Branding */}
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold text-blue-400 mb-3 flex items-center gap-2">
+                    🎨 Refreshed Professional Look
+                  </h3>
+                  <div className="space-y-2 text-gray-300">
+                    <div className="flex items-start gap-2">
+                      <span className="text-blue-400 mt-1">▹</span>
+                      <span>Updated brand logo with sleek oval design</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-blue-400 mt-1">▹</span>
+                      <span>Consistent branding throughout the entire site</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-blue-400 mt-1">▹</span>
+                      <span>Polished, professional appearance that builds trust</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Feature Highlights */}
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold text-cyan-400 mb-3 flex items-center gap-2">
+                    ✨ New Feature Highlights
+                  </h3>
+                  <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xl">📍</span>
+                        <span className="text-sm text-gray-300">GPS Tracked</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xl">❄️</span>
+                        <span className="text-sm text-gray-300">Climate Controlled</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xl">✓</span>
+                        <span className="text-sm text-gray-300">DOT Certified</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xl">🛡️</span>
+                        <span className="text-sm text-gray-300">Fully Insured</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-gray-400 text-sm mt-3">
+                    Quick visual reference for our key service features and certifications
+                  </p>
+                </div>
+
+                {/* UX Improvements */}
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold text-purple-400 mb-3 flex items-center gap-2">
+                    💫 Smoother User Experience
+                  </h3>
+                  <div className="space-y-2 text-gray-300">
+                    <div className="flex items-start gap-2">
+                      <span className="text-purple-400 mt-1">▹</span>
+                      <span>Content smoothly fades in as you scroll - more engaging browsing</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-purple-400 mt-1">▹</span>
+                      <span>Enhanced hover effects make interactive elements more obvious</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-purple-400 mt-1">▹</span>
+                      <span>Gradient backgrounds add depth without slowing down the site</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-purple-400 mt-1">▹</span>
+                      <span>Still lightning-fast - all animations use efficient CSS</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Version 1.0.1 - November 2025 Update */}
+              <div className="mb-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="px-3 py-1 bg-gray-600 text-white text-sm font-bold rounded-full">
+                    v1.0.1
                   </span>
                   <span className="text-gray-400 text-sm">November 2025</span>
                 </div>
@@ -107,7 +215,7 @@ export default function VersionBadge() {
               {/* Version 1.0.0 - Initial Release */}
               <div className="mb-8">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="px-3 py-1 bg-green-600 text-white text-sm font-bold rounded-full">
+                  <span className="px-3 py-1 bg-gray-600 text-white text-sm font-bold rounded-full">
                     v1.0.0
                   </span>
                   <span className="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full">
@@ -209,7 +317,7 @@ export default function VersionBadge() {
                     Chillicothe, Ohio
                   </p>
                   <p className="text-gray-500 text-xs mt-3">
-                    Current Version: v1.0.1 • Last Updated: November 2025
+                    Current Version: v1.2.0 • Last Updated: November 7, 2025
                   </p>
                 </div>
               </div>
@@ -218,6 +326,7 @@ export default function VersionBadge() {
           </div>
         </div>
       )}
+
 
       <style>{`
         @keyframes fadeIn {

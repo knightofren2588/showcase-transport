@@ -73,7 +73,8 @@ const Footer = () => {
                   </a>
                 </li>
                 <li className="text-gray-300">
-                  Address: 123 Transport Ave
+                  240 Highmeadow Dr.<br />
+                  Columbus, OH
                 </li>
               </ul>
             </div>

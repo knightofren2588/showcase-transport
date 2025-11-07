@@ -1,14 +1,48 @@
 // src/pages/Home.jsx
 
 import { Link } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
 import TruckSceneBasic from '../components/TruckSceneBasic';
-import ShowcaseTransportLogo from '../components/ShowcaseTransportLogo';
 
 export default function Home() {
+  const [equipmentVisible, setEquipmentVisible] = useState(false);
+  const equipmentRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setEquipmentVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (equipmentRef.current) {
+      observer.observe(equipmentRef.current);
+    }
+
+    return () => {
+      if (equipmentRef.current) {
+        observer.unobserve(equipmentRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen bg-white">
+    <div
+      className="min-h-screen bg-white"
+      style={{
+        backgroundImage:
+          'linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)), url("/images/ST Log.JPG")',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
       {/* Hero Section */}
-      <section className="bg-gray-50 py-16 lg:py-24">
+      <section className="bg-gray-50/90 py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Column - Text */}
@@ -20,28 +54,120 @@ export default function Home() {
                 Watch our professional drivers execute perfect backing maneuvers with safety and efficiency.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact" className="brand-btn inline-block text-center">
-  Get a Quote
-</Link>
-<Link
-  to="/services"
-  className="brand-cta inline-block text-center"
->
-  Learn More
-</Link>
+                <Link to="/contact" className="brand-btn inline-block text-center">
+                  Get a Quote
+                </Link>
+                <Link
+                  to="/services"
+                  className="brand-cta inline-block text-center"
+                >
+                  Learn More
+                </Link>
               </div>
             </div>
             
-            {/* Right Column - Logo */}
+            {/* Right Column - Logo Image */}
             <div className="w-full flex items-center justify-center">
-              <ShowcaseTransportLogo size="xlarge" className="drop-shadow-2xl" />
+              <img
+                src="/images/ST2.jpg"
+                alt="Showcase Transport Logo"
+                className="w-full h-auto max-w-xl object-contain"
+                style={{
+                  mixBlendMode: 'multiply',
+                  backgroundColor: 'transparent'
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Real Truck Photo Section - ENHANCED */}
+      <section 
+        ref={equipmentRef}
+        className="bg-white/90 py-16"
+      >
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            {/* Heading with fade-in */}
+            <div 
+              className={`text-center mb-6 transition-all duration-700 ${
+                equipmentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0F2931] mb-3">
+                Our Equipment
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Modern, well-maintained fleet equipped with the latest technology for safe and efficient freight transport.
+              </p>
+            </div>
+
+            {/* Image container with hover effect */}
+            <div 
+              className={`relative rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 delay-200 ${
+                equipmentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
+              {/* Main truck image with hover effect */}
+              <div className="relative group">
+                <img 
+                  src="/images/ST.jpg" 
+                  alt="Showcase Transport professional green freight truck with custom chrome stacks" 
+                  className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                />
+                
+                {/* Overlay gradient on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            </div>
+
+            {/* Feature Badges - Now OUTSIDE the image */}
+            <div 
+              className={`grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 transition-all duration-700 delay-300 ${
+                equipmentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
+              <div className="bg-green-700 text-white px-4 py-3 rounded-lg font-semibold shadow-lg flex items-center justify-center gap-2">
+                <span className="text-xl">📍</span>
+                <span>GPS Tracked</span>
+              </div>
+              <div className="bg-[#0F2931] text-white px-4 py-3 rounded-lg font-semibold shadow-lg flex items-center justify-center gap-2">
+                <span className="text-xl">❄️</span>
+                <span>Climate Controlled</span>
+              </div>
+              <div className="bg-green-700 text-white px-4 py-3 rounded-lg font-semibold shadow-lg flex items-center justify-center gap-2">
+                <span className="text-xl">✓</span>
+                <span>DOT Certified</span>
+              </div>
+              <div className="bg-[#0F2931] text-white px-4 py-3 rounded-lg font-semibold shadow-lg flex items-center justify-center gap-2">
+                <span className="text-xl">🛡️</span>
+                <span>Fully Insured</span>
+              </div>
+            </div>
+
+            {/* CTA Button with fade-in */}
+            <div 
+              className={`text-center mt-8 transition-all duration-700 delay-400 ${
+                equipmentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
+              <p className="text-gray-700 mb-4 text-lg">
+                Ready to transport with confidence?
+              </p>
+              <Link
+                to="/contact"
+                className="brand-btn inline-block transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              >
+                Request a Quote
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* Truck Animation Section */}
-      <section className="bg-white py-12">
+      <section className="bg-white/90 py-12">
         <div className="mx-auto px-6">
           <div className="bg-gray-100 rounded-2xl shadow-xl border-2 border-gray-300 p-8 md:p-12">
             <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
@@ -53,7 +179,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="bg-white py-16">
+      <section id="about" className="bg-white/90 py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto bg-[#F4F5F6] rounded-2xl p-8 md:p-12">
             <div className="text-center mb-8">
@@ -69,8 +195,8 @@ export default function Home() {
             </div>
             <div className="grid md:grid-cols-3 gap-6 mt-12">
               <div className="bg-white rounded-lg p-6 text-center shadow-sm">
-                <div className="text-3xl font-bold text-green-700 mb-2">10+</div>
-                <p className="text-[#0F2931] font-semibold">Years Combined Experience</p>
+                <div className="text-3xl font-bold text-green-700 mb-2">30+</div>
+                <p className="text-[#0F2931] font-semibold">Years Experience</p>
               </div>
               <div className="bg-white rounded-lg p-6 text-center shadow-sm">
                 <div className="text-3xl font-bold text-green-700 mb-2">100%</div>
@@ -86,7 +212,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="bg-white py-16">
+      <section className="bg-white/90 py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-[#0F2931] text-center mb-12">
@@ -123,7 +249,7 @@ export default function Home() {
       </section>
 
       {/* Values Section */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-gray-50/90 py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-[#0F2931] text-center mb-4">
