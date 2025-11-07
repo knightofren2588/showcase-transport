@@ -61,7 +61,7 @@ export default function Home() {
                   to="/services"
                   className="brand-cta inline-block text-center"
                 >
-                  Learn More
+                  View Our Services
                 </Link>
               </div>
             </div>
