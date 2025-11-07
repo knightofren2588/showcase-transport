@@ -73,8 +73,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li className="text-gray-300">
-                  240 Highmeadow Dr.<br />
-                  Columbus, OH
+                  Address coming soon
                 </li>
               </ul>
             </div>
