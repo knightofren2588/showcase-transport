@@ -56,14 +56,28 @@ const Footer = () => {
             <div>
               <h3 className="text-xl font-bold text-white mb-4">Contact Us</h3>
               <ul className="space-y-3">
+                {/* Primary Email - MAG */}
                 <li>
+                  <div className="text-gray-400 text-xs mb-1">Primary Contact:</div>
                   <a 
-                    href="mailto:mmg@showcasetransport.com,mag@showcasetransport.com"
-                    className="text-gray-300 hover:text-[#F2B94C] transition-colors"
+                    href="mailto:mag@showcasetransport.com"
+                    className="text-gray-300 hover:text-[#F2B94C] transition-colors font-semibold block"
                   >
-                    Email: mmg@showcasetransport.com &amp; mag@showcasetransport.com
+                    mag@showcasetransport.com
                   </a>
                 </li>
+                
+                {/* Secondary Email - MMG */}
+                <li>
+                  <div className="text-gray-400 text-xs mb-1">Secondary Contact:</div>
+                  <a 
+                    href="mailto:mmg@showcasetransport.com"
+                    className="text-gray-300 hover:text-[#F2B94C] transition-colors block"
+                  >
+                    mmg@showcasetransport.com
+                  </a>
+                </li>
+                
                 <li>
                   <a 
                     href="tel:6145261848"
@@ -73,7 +87,8 @@ const Footer = () => {
                   </a>
                 </li>
                 <li className="text-gray-300">
-                  Address coming soon
+                  240 Highmeadow Dr.<br />
+                  Columbus, OH
                 </li>
               </ul>
             </div>
