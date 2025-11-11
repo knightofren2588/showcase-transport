@@ -86,10 +86,6 @@ const Footer = () => {
                     Phone: (614) 526-1848
                   </a>
                 </li>
-                <li className="text-gray-300">
-                  240 Highmeadow Dr.<br />
-                  Columbus, OH
-                </li>
               </ul>
             </div>
           </div>
